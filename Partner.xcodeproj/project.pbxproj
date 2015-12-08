@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD681C140CFC00438A7A /* AppDelegate.swift */; };
-		98A3FD6B1C140CFC00438A7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD6A1C140CFC00438A7A /* ViewController.swift */; };
 		98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6C1C140CFC00438A7A /* Main.storyboard */; };
 		98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6F1C140CFC00438A7A /* Assets.xcassets */; };
 		98A3FD731C140CFC00438A7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD711C140CFC00438A7A /* LaunchScreen.storyboard */; };
 		98A3FD7E1C140CFC00438A7A /* PartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD7D1C140CFC00438A7A /* PartnerTests.swift */; };
 		98A3FD891C140CFC00438A7A /* PartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD881C140CFC00438A7A /* PartnerUITests.swift */; };
+		98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */; };
+		98A3FD991C14114700438A7A /* PtnNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD981C14114700438A7A /* PtnNavigationController.swift */; };
+		98A3FD9B1C145D7000438A7A /* PtnHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */; };
+		98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */; };
+		98A3FD9F1C145EE800438A7A /* PtnUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */; };
+		98A3FDCD1C15AE2300438A7A /* 30 in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDCC1C15AE2300438A7A /* 30 */; };
+		98A3FDCF1C15B14900438A7A /* 60 in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDCE1C15B14900438A7A /* 60 */; };
+		98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */; };
+		98A3FDD31C15C4D700438A7A /* PtnSportListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +44,6 @@
 /* Begin PBXFileReference section */
 		98A3FD651C140CFC00438A7A /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD681C140CFC00438A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98A3FD6A1C140CFC00438A7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98A3FD6D1C140CFC00438A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98A3FD6F1C140CFC00438A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A3FD721C140CFC00438A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,15 @@
 		98A3FD841C140CFC00438A7A /* PartnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD881C140CFC00438A7A /* PartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerUITests.swift; sourceTree = "<group>"; };
 		98A3FD8A1C140CFD00438A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnRootViewTabController.swift; sourceTree = "<group>"; };
+		98A3FD981C14114700438A7A /* PtnNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnNavigationController.swift; sourceTree = "<group>"; };
+		98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnHistoryViewController.swift; sourceTree = "<group>"; };
+		98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnSportsListViewController.swift; sourceTree = "<group>"; };
+		98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnUserInfoViewController.swift; sourceTree = "<group>"; };
+		98A3FDCC1C15AE2300438A7A /* 30 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 30; path = pictures/30; sourceTree = SOURCE_ROOT; };
+		98A3FDCE1C15B14900438A7A /* 60 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 60; path = pictures/60; sourceTree = SOURCE_ROOT; };
+		98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnSportListTableViewCell.swift; sourceTree = "<group>"; };
+		98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PtnSportListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +113,20 @@
 		98A3FD671C140CFC00438A7A /* Partner */ = {
 			isa = PBXGroup;
 			children = (
+				98A3FDCE1C15B14900438A7A /* 60 */,
+				98A3FDCC1C15AE2300438A7A /* 30 */,
 				98A3FD681C140CFC00438A7A /* AppDelegate.swift */,
-				98A3FD6A1C140CFC00438A7A /* ViewController.swift */,
+				98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */,
+				98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */,
+				98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */,
 				98A3FD6C1C140CFC00438A7A /* Main.storyboard */,
 				98A3FD6F1C140CFC00438A7A /* Assets.xcassets */,
 				98A3FD711C140CFC00438A7A /* LaunchScreen.storyboard */,
 				98A3FD741C140CFC00438A7A /* Info.plist */,
+				98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */,
+				98A3FD981C14114700438A7A /* PtnNavigationController.swift */,
+				98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */,
+				98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -187,6 +211,11 @@
 		98A3FD5D1C140CFB00438A7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+					3,
+				);
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "张宏台";
@@ -232,7 +261,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A3FDCF1C15B14900438A7A /* 60 in Resources */,
 				98A3FD731C140CFC00438A7A /* LaunchScreen.storyboard in Resources */,
+				98A3FDCD1C15AE2300438A7A /* 30 in Resources */,
+				98A3FDD31C15C4D700438A7A /* PtnSportListTableViewCell.xib in Resources */,
 				98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */,
 				98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */,
 			);
@@ -259,7 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A3FD6B1C140CFC00438A7A /* ViewController.swift in Sources */,
+				98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */,
+				98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */,
+				98A3FD9B1C145D7000438A7A /* PtnHistoryViewController.swift in Sources */,
+				98A3FD9F1C145EE800438A7A /* PtnUserInfoViewController.swift in Sources */,
+				98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */,
+				98A3FD991C14114700438A7A /* PtnNavigationController.swift in Sources */,
 				98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
