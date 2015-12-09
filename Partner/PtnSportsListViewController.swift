@@ -22,6 +22,9 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         self.tabBarItem = tabBtn;
         sportListTable.delegate = self;
         sportListTable.dataSource = self;
+        var activePdu:PtnActiveInfoQueryPDU = PtnActiveInfoQueryPDU("http://yuyanshu.cn/app.php/active/query");
+        activePdu.requestHttp();
+        sportListTable.reloadData();
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         return sportCell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 1;
+        return activePdu.activeInfo.count;
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -48,7 +51,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         
     }
     func tableView(tableView: UITableView, willDisplayCell cell:PtnSportListTableViewCell, indexPath: NSIndexPath){
-        cell.sportTitle.text = "足球盛宴"
+        cell.sportTitle.text = activePdu.activeInfo[indexPath].title;
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         return 50;
