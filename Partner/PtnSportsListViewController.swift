@@ -11,6 +11,7 @@ import UIKit
 class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var sportListTable: UITableView!
+    var activePdu:PtnActiveInfoQueryPDU?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,10 +21,10 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         let tabImgSelect:UIImage = UIImage(CGImage: tabImgSelect1.CGImage!, scale: 2, orientation: .Up)
         let tabBtn:UITabBarItem = UITabBarItem(title: "足球天下", image: tabImg.imageWithRenderingMode(.AlwaysOriginal), selectedImage: tabImgSelect.imageWithRenderingMode(.AlwaysOriginal))
         self.tabBarItem = tabBtn;
+        activePdu = PtnActiveInfoQueryPDU(url: "http://yuyanshu.cn:8001/app.php/active/query");
+        activePdu!.requestHttp();
         sportListTable.delegate = self;
         sportListTable.dataSource = self;
-        var activePdu:PtnActiveInfoQueryPDU = PtnActiveInfoQueryPDU("http://yuyanshu.cn/app.php/active/query");
-        activePdu.requestHttp();
         sportListTable.reloadData();
     }
     
@@ -43,7 +44,10 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         return sportCell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return activePdu.activeInfo.count;
+        if let active = activePdu!.activeInfo {
+            return active.count
+        }
+        return 0;
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
@@ -51,7 +55,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         
     }
     func tableView(tableView: UITableView, willDisplayCell cell:PtnSportListTableViewCell, indexPath: NSIndexPath){
-        cell.sportTitle.text = activePdu.activeInfo[indexPath].title;
+        cell.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         return 50;

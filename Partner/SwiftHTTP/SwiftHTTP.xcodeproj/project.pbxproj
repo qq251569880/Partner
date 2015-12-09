@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C6E39C91B94CB2600D55578 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C41B94CB2600D55578 /* Operation.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CA1B94CB2600D55578 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C41B94CB2600D55578 /* Operation.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CB1B94CB2600D55578 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C51B94CB2600D55578 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CC1B94CB2600D55578 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C51B94CB2600D55578 /* Request.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CD1B94CB2600D55578 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C61B94CB2600D55578 /* HTTPSecurity.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CE1B94CB2600D55578 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C61B94CB2600D55578 /* HTTPSecurity.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39CF1B94CB2600D55578 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C71B94CB2600D55578 /* StatusCode.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39D01B94CB2600D55578 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C71B94CB2600D55578 /* StatusCode.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39D11B94CB2600D55578 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C81B94CB2600D55578 /* Upload.swift */; settings = {ASSET_TAGS = (); }; };
-		5C6E39D21B94CB2600D55578 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C81B94CB2600D55578 /* Upload.swift */; settings = {ASSET_TAGS = (); }; };
+		5C6E39C91B94CB2600D55578 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C41B94CB2600D55578 /* Operation.swift */; };
+		5C6E39CA1B94CB2600D55578 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C41B94CB2600D55578 /* Operation.swift */; };
+		5C6E39CB1B94CB2600D55578 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C51B94CB2600D55578 /* Request.swift */; };
+		5C6E39CC1B94CB2600D55578 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C51B94CB2600D55578 /* Request.swift */; };
+		5C6E39CD1B94CB2600D55578 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C61B94CB2600D55578 /* HTTPSecurity.swift */; };
+		5C6E39CE1B94CB2600D55578 /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C61B94CB2600D55578 /* HTTPSecurity.swift */; };
+		5C6E39CF1B94CB2600D55578 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C71B94CB2600D55578 /* StatusCode.swift */; };
+		5C6E39D01B94CB2600D55578 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C71B94CB2600D55578 /* StatusCode.swift */; };
+		5C6E39D11B94CB2600D55578 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C81B94CB2600D55578 /* Upload.swift */; };
+		5C6E39D21B94CB2600D55578 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E39C81B94CB2600D55578 /* Upload.swift */; };
 		6BFD903819C8D95C00DD99B6 /* SwiftHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BFD903319C8D95C00DD99B6 /* SwiftHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6BFD904019C8D9A000DD99B6 /* SwiftHTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD903D19C8D98000DD99B6 /* SwiftHTTPTests.swift */; };
 		D958026419E6EEEB003C8218 /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D958025919E6EEEB003C8218 /* SwiftHTTP.framework */; };
-		D958027219E6EF2B003C8218 /* SwiftHTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD903D19C8D98000DD99B6 /* SwiftHTTPTests.swift */; };
 		D958027719E6EF89003C8218 /* SwiftHTTP.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BFD903319C8D95C00DD99B6 /* SwiftHTTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -52,7 +50,6 @@
 		6BFD903319C8D95C00DD99B6 /* SwiftHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftHTTP.h; sourceTree = SOURCE_ROOT; };
 		6BFD903919C8D96500DD99B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		6BFD903C19C8D98000DD99B6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		6BFD903D19C8D98000DD99B6 /* SwiftHTTPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftHTTPTests.swift; path = Tests/SwiftHTTPTests.swift; sourceTree = "<group>"; };
 		D958025919E6EEEB003C8218 /* SwiftHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D958026319E6EEEB003C8218 /* SwiftHTTPOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHTTPOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				6BFD903C19C8D98000DD99B6 /* Info.plist */,
-				6BFD903D19C8D98000DD99B6 /* SwiftHTTPTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -328,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BFD904019C8D9A000DD99B6 /* SwiftHTTPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D958027219E6EF2B003C8218 /* SwiftHTTPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

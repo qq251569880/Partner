@@ -29,7 +29,6 @@
 		98A3FDF91C179C9A00438A7A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDDD1C179C9A00438A7A /* LICENSE */; };
 		98A3FDFA1C179C9A00438A7A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDDE1C179C9A00438A7A /* README.md */; };
 		98A3FDFB1C179C9A00438A7A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDE01C179C9A00438A7A /* Info.plist */; };
-		98A3FDFC1C179C9A00438A7A /* JSONJoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDE11C179C9A00438A7A /* JSONJoyTests.swift */; };
 		98A3FDFD1C179C9A00438A7A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDE31C179C9A00438A7A /* .gitignore */; };
 		98A3FDFE1C179C9A00438A7A /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDE41C179C9A00438A7A /* CHANGELOG.md */; };
 		98A3FDFF1C179C9A00438A7A /* HTTPSecurity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDE51C179C9A00438A7A /* HTTPSecurity.swift */; };
@@ -41,10 +40,13 @@
 		98A3FE051C179C9A00438A7A /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDEB1C179C9A00438A7A /* StatusCode.swift */; };
 		98A3FE061C179C9A00438A7A /* SwiftHTTP.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDED1C179C9A00438A7A /* SwiftHTTP.podspec */; };
 		98A3FE071C179C9A00438A7A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDF21C179C9A00438A7A /* Info.plist */; };
-		98A3FE081C179C9A00438A7A /* SwiftHTTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDF31C179C9A00438A7A /* SwiftHTTPTests.swift */; };
 		98A3FE091C179C9A00438A7A /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDF41C179C9A00438A7A /* Upload.swift */; };
 		98A3FE221C179CBF00438A7A /* JSONJoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A3FE0F1C179C9B00438A7A /* JSONJoy.framework */; };
 		98A3FE231C179CC400438A7A /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A3FE1B1C179C9B00438A7A /* SwiftHTTP.framework */; };
+		98A3FE291C1857F900438A7A /* PtnActiveInfoQueryPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */; };
+		98A3FE2A1C1857F900438A7A /* PtnCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE261C1857F900438A7A /* PtnCommon.swift */; };
+		98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE271C1857F900438A7A /* PtnEntity.swift */; };
+		98A3FE2C1C1857F900438A7A /* PtnPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE281C1857F900438A7A /* PtnPDU.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +153,6 @@
 		98A3FDDD1C179C9A00438A7A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		98A3FDDE1C179C9A00438A7A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		98A3FDE01C179C9A00438A7A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98A3FDE11C179C9A00438A7A /* JSONJoyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONJoyTests.swift; sourceTree = "<group>"; };
 		98A3FDE31C179C9A00438A7A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		98A3FDE41C179C9A00438A7A /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		98A3FDE51C179C9A00438A7A /* HTTPSecurity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPSecurity.swift; sourceTree = "<group>"; };
@@ -165,8 +166,11 @@
 		98A3FDED1C179C9A00438A7A /* SwiftHTTP.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHTTP.podspec; sourceTree = "<group>"; };
 		98A3FDEE1C179C9A00438A7A /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftHTTP.xcodeproj; sourceTree = "<group>"; };
 		98A3FDF21C179C9A00438A7A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98A3FDF31C179C9A00438A7A /* SwiftHTTPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHTTPTests.swift; sourceTree = "<group>"; };
 		98A3FDF41C179C9A00438A7A /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoQueryPDU.swift; sourceTree = "<group>"; };
+		98A3FE261C1857F900438A7A /* PtnCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnCommon.swift; sourceTree = "<group>"; };
+		98A3FE271C1857F900438A7A /* PtnEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnEntity.swift; sourceTree = "<group>"; };
+		98A3FE281C1857F900438A7A /* PtnPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnPDU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +223,7 @@
 		98A3FD671C140CFC00438A7A /* Partner */ = {
 			isa = PBXGroup;
 			children = (
+				98A3FE241C1857F900438A7A /* Public */,
 				98A3FDD41C179C9900438A7A /* JSONJoy */,
 				98A3FDE21C179C9A00438A7A /* SwiftHTTP */,
 				98A3FDCE1C15B14900438A7A /* 60 */,
@@ -288,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				98A3FDE01C179C9A00438A7A /* Info.plist */,
-				98A3FDE11C179C9A00438A7A /* JSONJoyTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -329,9 +333,19 @@
 			isa = PBXGroup;
 			children = (
 				98A3FDF21C179C9A00438A7A /* Info.plist */,
-				98A3FDF31C179C9A00438A7A /* SwiftHTTPTests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		98A3FE241C1857F900438A7A /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */,
+				98A3FE261C1857F900438A7A /* PtnCommon.swift */,
+				98A3FE271C1857F900438A7A /* PtnEntity.swift */,
+				98A3FE281C1857F900438A7A /* PtnPDU.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,23 +569,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */,
 				98A3FE091C179C9A00438A7A /* Upload.swift in Sources */,
 				98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */,
 				98A3FDFF1C179C9A00438A7A /* HTTPSecurity.swift in Sources */,
 				98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */,
 				98A3FDFE1C179C9A00438A7A /* CHANGELOG.md in Sources */,
+				98A3FE2A1C1857F900438A7A /* PtnCommon.swift in Sources */,
 				98A3FD9B1C145D7000438A7A /* PtnHistoryViewController.swift in Sources */,
 				98A3FD9F1C145EE800438A7A /* PtnUserInfoViewController.swift in Sources */,
 				98A3FDF81C179C9A00438A7A /* JSONJoy.swift in Sources */,
-				98A3FE081C179C9A00438A7A /* SwiftHTTPTests.swift in Sources */,
 				98A3FE041C179C9A00438A7A /* Request.swift in Sources */,
 				98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */,
-				98A3FDFC1C179C9A00438A7A /* JSONJoyTests.swift in Sources */,
 				98A3FE051C179C9A00438A7A /* StatusCode.swift in Sources */,
 				98A3FDFA1C179C9A00438A7A /* README.md in Sources */,
 				98A3FE031C179C9A00438A7A /* README.md in Sources */,
 				98A3FE021C179C9A00438A7A /* Operation.swift in Sources */,
+				98A3FE291C1857F900438A7A /* PtnActiveInfoQueryPDU.swift in Sources */,
 				98A3FD991C14114700438A7A /* PtnNavigationController.swift in Sources */,
+				98A3FE2C1C1857F900438A7A /* PtnPDU.swift in Sources */,
 				98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

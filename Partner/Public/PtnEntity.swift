@@ -9,7 +9,7 @@ struct QueryBody: JSONJoy{
     init(_ decoder: JSONDecoder) {
         numfound = decoder["numfound"].integer
         start = decoder["start"].integer
-        if(let num =numfound){
+        if let num = numfound {
 			if(num > 0){
 				list = decoder["list"]
 			}

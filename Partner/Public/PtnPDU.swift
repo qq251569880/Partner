@@ -13,7 +13,7 @@ struct Parameter{
 	
 	var value:String?;
 	var path:String?;
-	var array:Array?;
+	var array:Array<String>?;
 	init(){
 	}
 }
@@ -30,12 +30,13 @@ struct PtnJsonErr:JSONJoy{
     }
 }
 struct PtnJsonParam:JSONJoy{
-	var paramDic:Dictionary<String,String>
+	var paramDic:Dictionary<String,String>?
     init() {
 
     }
     init(_ decoder: JSONDecoder) {
-        paramDic = decoder.getDictionary<String>
+        
+        decoder.getDictionary(&paramDic)
     }
 }
 struct PtnJsonHead:JSONJoy{
@@ -70,14 +71,15 @@ struct PtnJson:JSONJoy{
 
 class PtnPDU
 {
-	var requestUrl:String;
-	var accessToken:String;
+	var requestUrl:String?;
+	var accessToken:String?;
 	var requestMethod = "POST";
 	var parameterList:[Parameter];
 	
-	var responseData:NSData;
-	var responseJson:PtnJson;
+	var responseData:NSData?;
+	var responseJson:PtnJson?;
 	init(){
+        parameterList = [];
 	}
 	func setUrl(url:String)
 	{
@@ -89,27 +91,27 @@ class PtnPDU
 	}
 	func setStringParameter(name:String,value:String)
 	{
-		var para:Parameter;
+		var para:Parameter = Parameter();
 		para.name=name;
 		para.value=value;
 		para.type = .String;
-		parameterList.Add(para);
+		parameterList.append(para);
 	}
 	func setFileParameter(name:String,path:String)
 	{
-		var para:Parameter;
+		var para:Parameter = Parameter();
 		para.name=name;
 		para.path=path;//路径名
 		para.type = .File;
-		parameterList.Add(para);
+		parameterList.append(para);
 	}
-	func setArrayParameter(name:String,array:Array)
+	func setArrayParameter(name:String,array:Array<String>)
 	{
-		var para:Parameter;
+		var para:Parameter = Parameter();
 		para.name=name;
 		para.type = .Array;
 		para.array = array;
-		parameterList.Add(para);
+		parameterList.append(para);
 	}
 	func clearParameter()
 	{
@@ -124,25 +126,26 @@ class PtnPDU
 	{
 		do {
 			if(requestMethod == "POST"){
-				var params:Dictionary<String,AnyObject>;
+                var params:Dictionary<String,AnyObject> = [:];
 				for param in parameterList{
 					if(param.type == .File){
-						let url = NSURL(fileURLWithPath: param.path)
-						params.updateValue(Upload(fileUrl: url), forKey:param.name)  
+						let url = NSURL(fileURLWithPath: param.path!)
+						params.updateValue(Upload(fileUrl: url), forKey:param.name!)  
 					}else if(param.type == .Array){
-						params.updateValue(param.array, forKey:param.name)  
+						params.updateValue(param.array!, forKey:param.name!)
 					}else{
-						params.updateValue(param.value, forKey:param.name)  
+						params.updateValue(param.value!, forKey:param.name!)
 					}
 				}
 				
-				let opt = try HTTP.POST(requestUrl, parameters: params)
+				let opt = try HTTP.POST(requestUrl!, parameters: params)
 				opt.start { response in
 					if let error = response.error {
 						print("response got an error: \(error)")
 						
 					}
-					decodeResponse(JSONDecoder(response.data))
+                    
+                    self.decodeResponse(JSONDecoder(response.data))
 				}
 			}
 		} catch let error {
@@ -154,7 +157,7 @@ class PtnPDU
 		
 		responseJson = PtnJson(decoder);
 		//解析响应，获得status
-		if(let statu = responseJson.head.status){
+		if let statu = responseJson!.head!.status {
 			if( statu == 0){
 				decodeReturnBody();
 			}else{
