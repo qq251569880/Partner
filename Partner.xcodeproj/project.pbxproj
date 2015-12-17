@@ -813,6 +813,7 @@
 				98A3FD8F1C140CFD00438A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98A3FD901C140CFD00438A7A /* Build configuration list for PBXNativeTarget "PartnerTests" */ = {
 			isa = XCConfigurationList;
@@ -821,6 +822,7 @@
 				98A3FD921C140CFD00438A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		98A3FD931C140CFD00438A7A /* Build configuration list for PBXNativeTarget "PartnerUITests" */ = {
 			isa = XCConfigurationList;
@@ -829,6 +831,7 @@
 				98A3FD951C140CFD00438A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -58,7 +58,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         cell.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
-        return 50;
+        return 130;
     }
 }
 
