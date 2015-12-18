@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,PduDelegate {
     
     @IBOutlet weak var sportListTable: UITableView!
     var activePdu:PtnActiveInfoQueryPDU?
@@ -22,10 +22,12 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         let tabBtn:UITabBarItem = UITabBarItem(title: "足球天下", image: tabImg.imageWithRenderingMode(.AlwaysOriginal), selectedImage: tabImgSelect.imageWithRenderingMode(.AlwaysOriginal))
         self.tabBarItem = tabBtn;
         activePdu = PtnActiveInfoQueryPDU(url: "http://yuyanshu.cn:8001/app.php/active/query");
+        activePdu!.delegate = self;
+        activePdu!.setStringParameter(name:"fields",value:"activeid,title,creatorname,creatoravatar,introduce,starttime,country,province,city,area,address,inmember");
         activePdu!.requestHttp();
         sportListTable.delegate = self;
         sportListTable.dataSource = self;
-        sportListTable.reloadData();
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,7 +40,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         var sportCell:PtnSportListTableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId) as? PtnSportListTableViewCell;
         if(sportCell == nil){
              //sportCell = PtnSportListTableViewCell(newStyle:.Subtitle ,newReuseIdentifier:cellId)
-            tableView.registerNib(UINib.init(nibName: "PtnSportListTableViewCell", bundle: nil), forCellReuseIdentifier: "sportListCell")
+            tableView.registerNib(UINib.init(nibName: "PtnSportListTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
             sportCell = tableView.dequeueReusableCellWithIdentifier(cellId) as? PtnSportListTableViewCell;
         }
         return sportCell!
@@ -56,9 +58,24 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
     }
     func tableView(tableView: UITableView, willDisplayCell cell:PtnSportListTableViewCell, indexPath: NSIndexPath){
         cell.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
+        cell.sportCreator.text = activePdu!.activeInfo![indexPath.row].creatorName;
+        cell.sportTime.text = activePdu!.activeInfo![indexPath.row].startTime;
+        cell.sportPlace.text = activePdu!.activeInfo![indexPath.row].address;
+        cell.sportParticipate.text = activePdu!.activeInfo![indexPath.row].inmember;
+        cell.sportIntoduce.text = activePdu!.activeInfo![indexPath.row].introduce;
+        var imageUrl = activePdu!.activeInfo![indexPath.row].creatorAvatar;
+        var avatarImage:UIImage = UIImage(data:NSData(contentsOfURL:NSURL(string:imageUrl)));
+        cell.creatorImage.image = avatarImage;
+        cell.creatorImage.contentMode = .AspectFill;
+        cell.backgroundColor = indexPath%2 ? greenColor:redColor;
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         return 130;
     }
+    //PduDelegate协议
+    func reloadTable(){
+		print("viewController reload data!!!");
+		sportListTable.reloadData();
+	}
 }
 

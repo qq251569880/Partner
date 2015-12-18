@@ -68,7 +68,9 @@ struct PtnJson:JSONJoy{
         body=decoder["body"];
     }
 }
-
+protocol PduDelegate{
+	func reloadTable()
+}
 class PtnPDU
 {
 	var requestUrl:String?;
@@ -78,6 +80,7 @@ class PtnPDU
 	
 	var responseData:NSData?;
 	var responseJson:PtnJson?;
+	var delegate:PduDelegate?
 	init(){
         parameterList = [];
 	}

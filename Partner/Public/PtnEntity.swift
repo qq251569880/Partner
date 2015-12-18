@@ -31,6 +31,18 @@ struct ActiveInfo: JSONJoy
     var endTime:String?
     var member:String?
     var inmember:String?
+    var joined:String?
+    var partiState:String?
+    var partiResult:String?
+    var creatorName:String?
+    var creatorAvatar:String?
+    var country:String?
+    var province:String?
+    var city:String?
+    var area:String?
+    var address:String?
+    var latitude:String?
+    var longitude:String?
     var id:Int?
     init() {
 
@@ -45,9 +57,22 @@ struct ActiveInfo: JSONJoy
         maxMember = decoder["maxmember"].string
         introduce = decoder["introduce"].string
         createTime = decoder["createtime"].string
+        startTime = decoder["starttime"].string
         endTime = decoder["endtime"].string
         member = decoder["member"].string
         inmember = decoder["inmember"].string
+        joined = decoder["joined"].string
+        partiState = decoder["partistate"].string
+        partiResult = decoder["partiresult"].string
+        creatorName = decoder["creatorname"].string
+        creatorAvatar = decoder["creatoravatar"].string
+        country = decoder["country"].string
+        province = decoder["province"].string
+        city = decoder["city"].string
+        area = decoder["area"].string
+        address = decoder["address"].string
+        latitude = decoder["latitude"].string
+        longitude = decoder["longitude"].string
         id = decoder["id"].integer
     }
 

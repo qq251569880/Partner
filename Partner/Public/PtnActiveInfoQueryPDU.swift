@@ -19,7 +19,7 @@ class PtnActiveInfoQueryPDU :PtnPDU
             for activeinfo in lists {
                 activeInfo!.append(ActiveInfo(activeinfo));
             }
-			
 		}
+		delegate?.reloadTable();
 	}
 }
