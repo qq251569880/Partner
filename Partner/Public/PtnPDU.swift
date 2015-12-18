@@ -162,7 +162,9 @@ class PtnPDU
 		//解析响应，获得status
 		if let statu = responseJson!.head!.status {
 			if( statu == 0){
-				decodeReturnBody();
+				if responseJson!.body != nil {
+					decodeReturnBody();
+				}
 			}else{
 				print("server returned err ");
 			}

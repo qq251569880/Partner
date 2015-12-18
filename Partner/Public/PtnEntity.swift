@@ -1,5 +1,5 @@
 import JSONJoy
-struct QueryBody: JSONJoy{
+struct PtnQueryBody: JSONJoy{
 	var numfound:Int?;
 	var start:Int?;
 	var list:JSONDecoder?
@@ -15,6 +15,16 @@ struct QueryBody: JSONJoy{
 			}
         }
 	}	
+}
+struct PtnCreateBody:JSONJoy{
+	var objectId:String?;
+	var objectValue:String?;
+	init(){
+	}
+	init(decoder:JSONDecoder,id:String) {
+		objectId = id;
+		objectValue = decoder[objectId].string;
+	}
 }
 struct ActiveInfo: JSONJoy
 {
