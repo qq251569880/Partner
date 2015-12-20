@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */; };
 		98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD681C140CFC00438A7A /* AppDelegate.swift */; };
 		98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6C1C140CFC00438A7A /* Main.storyboard */; };
 		98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6F1C140CFC00438A7A /* Assets.xcassets */; };
@@ -14,12 +15,9 @@
 		98A3FD7E1C140CFC00438A7A /* PartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD7D1C140CFC00438A7A /* PartnerTests.swift */; };
 		98A3FD891C140CFC00438A7A /* PartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD881C140CFC00438A7A /* PartnerUITests.swift */; };
 		98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */; };
-		98A3FD991C14114700438A7A /* PtnNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD981C14114700438A7A /* PtnNavigationController.swift */; };
 		98A3FD9B1C145D7000438A7A /* PtnHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */; };
 		98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */; };
 		98A3FD9F1C145EE800438A7A /* PtnUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */; };
-		98A3FDCD1C15AE2300438A7A /* 30 in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDCC1C15AE2300438A7A /* 30 */; };
-		98A3FDCF1C15B14900438A7A /* 60 in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDCE1C15B14900438A7A /* 60 */; };
 		98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */; };
 		98A3FDD31C15C4D700438A7A /* PtnSportListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */; };
 		98A3FDF51C179C9A00438A7A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FDD51C179C9900438A7A /* .gitignore */; };
@@ -43,10 +41,11 @@
 		98A3FE091C179C9A00438A7A /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FDF41C179C9A00438A7A /* Upload.swift */; };
 		98A3FE221C179CBF00438A7A /* JSONJoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A3FE0F1C179C9B00438A7A /* JSONJoy.framework */; };
 		98A3FE231C179CC400438A7A /* SwiftHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A3FE1B1C179C9B00438A7A /* SwiftHTTP.framework */; };
-		98A3FE291C1857F900438A7A /* PtnActiveInfoQueryPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */; };
 		98A3FE2A1C1857F900438A7A /* PtnCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE261C1857F900438A7A /* PtnCommon.swift */; };
 		98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE271C1857F900438A7A /* PtnEntity.swift */; };
 		98A3FE2C1C1857F900438A7A /* PtnPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FE281C1857F900438A7A /* PtnPDU.swift */; };
+		98A70D901C24FD9B004C4819 /* PtnNoBodyPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A70D8F1C24FD9B004C4819 /* PtnNoBodyPDU.swift */; };
+		98A70D921C24FDB0004C4819 /* PtnCreateResultPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A70D911C24FDB0004C4819 /* PtnCreateResultPDU.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoPDU.swift; sourceTree = "<group>"; };
 		98A3FD651C140CFC00438A7A /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD681C140CFC00438A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A3FD6D1C140CFC00438A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,12 +136,9 @@
 		98A3FD881C140CFC00438A7A /* PartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerUITests.swift; sourceTree = "<group>"; };
 		98A3FD8A1C140CFD00438A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnRootViewTabController.swift; sourceTree = "<group>"; };
-		98A3FD981C14114700438A7A /* PtnNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnNavigationController.swift; sourceTree = "<group>"; };
 		98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnHistoryViewController.swift; sourceTree = "<group>"; };
 		98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnSportsListViewController.swift; sourceTree = "<group>"; };
 		98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnUserInfoViewController.swift; sourceTree = "<group>"; };
-		98A3FDCC1C15AE2300438A7A /* 30 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 30; path = pictures/30; sourceTree = SOURCE_ROOT; };
-		98A3FDCE1C15B14900438A7A /* 60 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 60; path = pictures/60; sourceTree = SOURCE_ROOT; };
 		98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnSportListTableViewCell.swift; sourceTree = "<group>"; };
 		98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PtnSportListTableViewCell.xib; sourceTree = "<group>"; };
 		98A3FDD51C179C9900438A7A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -167,10 +164,11 @@
 		98A3FDEE1C179C9A00438A7A /* SwiftHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftHTTP.xcodeproj; sourceTree = "<group>"; };
 		98A3FDF21C179C9A00438A7A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98A3FDF41C179C9A00438A7A /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoQueryPDU.swift; sourceTree = "<group>"; };
 		98A3FE261C1857F900438A7A /* PtnCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnCommon.swift; sourceTree = "<group>"; };
 		98A3FE271C1857F900438A7A /* PtnEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnEntity.swift; sourceTree = "<group>"; };
 		98A3FE281C1857F900438A7A /* PtnPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnPDU.swift; sourceTree = "<group>"; };
+		98A70D8F1C24FD9B004C4819 /* PtnNoBodyPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnNoBodyPDU.swift; sourceTree = "<group>"; };
+		98A70D911C24FDB0004C4819 /* PtnCreateResultPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnCreateResultPDU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,8 +224,6 @@
 				98A3FE241C1857F900438A7A /* Public */,
 				98A3FDD41C179C9900438A7A /* JSONJoy */,
 				98A3FDE21C179C9A00438A7A /* SwiftHTTP */,
-				98A3FDCE1C15B14900438A7A /* 60 */,
-				98A3FDCC1C15AE2300438A7A /* 30 */,
 				98A3FD681C140CFC00438A7A /* AppDelegate.swift */,
 				98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */,
 				98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */,
@@ -237,7 +233,6 @@
 				98A3FD711C140CFC00438A7A /* LaunchScreen.storyboard */,
 				98A3FD741C140CFC00438A7A /* Info.plist */,
 				98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */,
-				98A3FD981C14114700438A7A /* PtnNavigationController.swift */,
 				98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */,
 				98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */,
 			);
@@ -340,10 +335,12 @@
 		98A3FE241C1857F900438A7A /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				98A3FE251C1857F900438A7A /* PtnActiveInfoQueryPDU.swift */,
+				987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */,
 				98A3FE261C1857F900438A7A /* PtnCommon.swift */,
 				98A3FE271C1857F900438A7A /* PtnEntity.swift */,
 				98A3FE281C1857F900438A7A /* PtnPDU.swift */,
+				98A70D8F1C24FD9B004C4819 /* PtnNoBodyPDU.swift */,
+				98A70D911C24FDB0004C4819 /* PtnCreateResultPDU.swift */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -531,12 +528,10 @@
 			files = (
 				98A3FE071C179C9A00438A7A /* Info.plist in Resources */,
 				98A3FDF61C179C9A00438A7A /* Info.plist in Resources */,
-				98A3FDCF1C15B14900438A7A /* 60 in Resources */,
 				98A3FDF51C179C9A00438A7A /* .gitignore in Resources */,
 				98A3FD731C140CFC00438A7A /* LaunchScreen.storyboard in Resources */,
 				98A3FDFD1C179C9A00438A7A /* .gitignore in Resources */,
 				98A3FDF91C179C9A00438A7A /* LICENSE in Resources */,
-				98A3FDCD1C15AE2300438A7A /* 30 in Resources */,
 				98A3FDD31C15C4D700438A7A /* PtnSportListTableViewCell.xib in Resources */,
 				98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */,
 				98A3FDFB1C179C9A00438A7A /* Info.plist in Resources */,
@@ -569,10 +564,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */,
 				98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */,
 				98A3FE091C179C9A00438A7A /* Upload.swift in Sources */,
 				98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */,
 				98A3FDFF1C179C9A00438A7A /* HTTPSecurity.swift in Sources */,
+				98A70D921C24FDB0004C4819 /* PtnCreateResultPDU.swift in Sources */,
 				98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */,
 				98A3FDFE1C179C9A00438A7A /* CHANGELOG.md in Sources */,
 				98A3FE2A1C1857F900438A7A /* PtnCommon.swift in Sources */,
@@ -580,13 +577,12 @@
 				98A3FD9F1C145EE800438A7A /* PtnUserInfoViewController.swift in Sources */,
 				98A3FDF81C179C9A00438A7A /* JSONJoy.swift in Sources */,
 				98A3FE041C179C9A00438A7A /* Request.swift in Sources */,
+				98A70D901C24FD9B004C4819 /* PtnNoBodyPDU.swift in Sources */,
 				98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */,
 				98A3FE051C179C9A00438A7A /* StatusCode.swift in Sources */,
 				98A3FDFA1C179C9A00438A7A /* README.md in Sources */,
 				98A3FE031C179C9A00438A7A /* README.md in Sources */,
 				98A3FE021C179C9A00438A7A /* Operation.swift in Sources */,
-				98A3FE291C1857F900438A7A /* PtnActiveInfoQueryPDU.swift in Sources */,
-				98A3FD991C14114700438A7A /* PtnNavigationController.swift in Sources */,
 				98A3FE2C1C1857F900438A7A /* PtnPDU.swift in Sources */,
 				98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */,
 			);

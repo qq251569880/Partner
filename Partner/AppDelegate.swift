@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Partner
+//  FootBall
 //
-//  Created by 张宏台 on 15/12/6.
+//  Created by 张宏台 on 15/12/20.
 //  Copyright © 2015年 张宏台. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        self.setTabBar()
         return true
     }
 
@@ -41,7 +41,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    private func setTabBar(){
+        let tabController:UITabBarController = self.window?.rootViewController as! UITabBarController
+        let tabBar:UITabBar = tabController.tabBar
+        
+        let tabBarItem1:UITabBarItem = tabBar.items![0];
+        let tabImg1:UIImage = UIImage(named: "1")!
+        let tabImg:UIImage = UIImage(CGImage: tabImg1.CGImage!, scale: 2, orientation: .Up)
+        let tabImgSelect1:UIImage = UIImage(named: "1_1")!
+        let tabImgSelect:UIImage = UIImage(CGImage: tabImgSelect1.CGImage!, scale: 2, orientation: .Up)
+        tabBarItem1.title = "足球天下"
+        tabBarItem1.image = tabImg.imageWithRenderingMode(.AlwaysOriginal);
+        tabBarItem1.selectedImage = tabImgSelect.imageWithRenderingMode(.AlwaysOriginal);
 
+        let tabBarItem2:UITabBarItem = tabBar.items![1];
+        let tabImgHis1:UIImage = UIImage(named: "2.png")!
+        let tabImgHis:UIImage = UIImage(CGImage: tabImgHis1.CGImage!, scale: 2, orientation: .Up)
+        let tabImgSelectHis1:UIImage = UIImage(named: "2_2.png")!
+        let tabImgSelectHis:UIImage = UIImage(CGImage: tabImgSelectHis1.CGImage!, scale: 2, orientation: .Up)
+        tabBarItem2.title = "我的活动"
+        tabBarItem2.image = tabImgHis.imageWithRenderingMode(.AlwaysOriginal);
+        tabBarItem2.selectedImage = tabImgSelectHis.imageWithRenderingMode(.AlwaysOriginal);
+
+        let tabBarItem3:UITabBarItem = tabBar.items![2];
+        let tabImgInfo1:UIImage = UIImage(named: "3")!
+        let tabImgInfo:UIImage = UIImage(CGImage: tabImgInfo1.CGImage!, scale: 2, orientation: .Up)
+        let tabImgSelectInfo1:UIImage = UIImage(named: "3_3")!
+        let tabImgSelectInfo:UIImage = UIImage(CGImage: tabImgSelectInfo1.CGImage!, scale: 2, orientation: .Up)
+        tabBarItem3.title = "我的信息"
+        tabBarItem3.image = tabImgInfo.imageWithRenderingMode(.AlwaysOriginal);
+        tabBarItem3.selectedImage = tabImgSelectInfo.imageWithRenderingMode(.AlwaysOriginal);
+        
+    }
 
 }
 

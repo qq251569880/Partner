@@ -14,12 +14,12 @@ class PtnHistoryViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tabImg1:UIImage = UIImage(named: "60/2.png")!
+/*        let tabImg1:UIImage = UIImage(named: "2.png")!
         let tabImg:UIImage = UIImage(CGImage: tabImg1.CGImage!, scale: 2, orientation: .Up)
-        let tabImgSelect1:UIImage = UIImage(named: "60/2_2.png")!
+        let tabImgSelect1:UIImage = UIImage(named: "2_2.png")!
         let tabImgSelect:UIImage = UIImage(CGImage: tabImgSelect1.CGImage!, scale: 2, orientation: .Up)
         let tabBtn:UITabBarItem = UITabBarItem(title: "我的赛事", image: tabImg.imageWithRenderingMode(.AlwaysOriginal), selectedImage: tabImgSelect.imageWithRenderingMode(.AlwaysOriginal))
-        self.tabBarItem = tabBtn;
+        self.tabBarItem = tabBtn;*/
         // Do any additional setup after loading the view, typically from a nib.
     }
     

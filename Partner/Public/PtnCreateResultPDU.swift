@@ -1,17 +1,26 @@
+//
+//  PtnCreateResultPDU.swift
+//  Partner
+//
+//  Created by å¼ å®å° on 15/12/19.
+//  Copyright Â© 2015å¹´ å¼ å®å°. All rights reserved.
+//
 
-
+import Foundation
 class PtnCreateResultPDU :PtnPDU
 {
-	var createBody:PtnCreateBody?
-	override init(){
-		super.init();
-	}
-	init(url:String){
-		super.init();
-		requestUrl = url;
-	}
-	//¼Ì³ĞÀàÊµÏÖ¸Ãº¯Êı
-	override func decodeReturnBody(){
-		createBody = PtnCreateBody(responseJson!.body!);
-	}
+    var createBody:PtnCreateBody?
+    var objectKey:String?
+    override init(){
+        super.init();
+    }
+    init(url:String,id:String){
+        super.init();
+        requestUrl = url;
+        objectKey = id;
+    }
+    
+    override func decodeReturnBody(){
+        createBody = PtnCreateBody(decoder:responseJson!.body!,id:objectKey!);
+    }
 }

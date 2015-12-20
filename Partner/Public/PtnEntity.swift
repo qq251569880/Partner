@@ -21,10 +21,13 @@ struct PtnCreateBody:JSONJoy{
 	var objectValue:String?;
 	init(){
 	}
-	init(decoder:JSONDecoder,id:String) {
-		objectId = id;
-		objectValue = decoder[objectId].string;
+	init(_ decoder:JSONDecoder) {
+		objectValue = decoder[objectId!].string;
 	}
+    init( decoder: JSONDecoder,id:String) {
+        objectId = id;
+        objectValue = decoder[objectId!].string;
+    }
 }
 struct ActiveInfo: JSONJoy
 {
