@@ -110,6 +110,29 @@ struct ActivePlace
     var adminMobile:String?
     var state:String?
     var id:Int?
+    init() {
+
+    }
+    init(_ decoder: JSONDecoder) {
+		placeId =decoder["placeid"].string
+		country =decoder["country"].string
+		province =decoder["province"].string
+		city =decoder["city"].string
+		area =decoder["area"].string
+		address =decoder["address"].string
+		introduce =decoder["introduce"].string
+		picture =decoder["picture"].string
+		latitude =decoder["latitude"].string
+		longitude =decoder["longitude"].string
+		price =decoder["price"].string
+		createTime =decoder["createtime"].string
+		updateTime =decoder["updatetime"].string
+		creator =decoder["creator"].string
+		adminName =decoder["adminname"].string
+		adminMobile =decoder["adminmobile"].string
+		state =decoder["state"].string
+		id =decoder["nindex"].integer
+	}
 }
 struct ActiveUser
 {
@@ -122,6 +145,20 @@ struct ActiveUser
     var joinNumber:String?
     var result:String?
     var id:Int?
+    init() {
+
+    }
+    init(_ decoder: JSONDecoder) {
+		activeId = decoder["activeid"].string
+		userId = decoder["userid"].string
+		state = decoder["state"].string
+		stateTime = decoder["statetime"].string
+		result = decoder["result"].string
+		joinGroup = decoder["joingroup"].string
+		joinMessage = decoder["joinmessage"].string
+		joinNumber = decoder["joinnumber"].string
+		id = decoder["nindex"].integer
+    }
 }
 struct ChatMessage
 {
@@ -133,6 +170,19 @@ struct ChatMessage
     var path:String?
     var sendTime:String?
     var id:Int?
+    init() {
+
+    }
+    init(_ decoder: JSONDecoder) {
+		activeId = decoder["activeid"].string
+		messageId = decoder["messageid"].string
+		userId = decoder["userid"].string
+		messageType = decoder["messagetype"].string
+		content = decoder["content"].string
+		path = decoder["path"].string
+		sendTime = decoder["sendtime"].string
+		id = decoder["nindex"].integer
+    }
 }
 struct Comment
 {
@@ -163,7 +213,6 @@ struct UserInfo
     var birth:String?
     var sex:String?
     var avatar:String?
-    var password:String?
     var country:String?
     var province:String?
     var city:String?
@@ -173,14 +222,25 @@ struct UserInfo
     var registerTime:String?
     var updateTime:String?
     var id:Int?
-}
-struct VerifyCode
-{
-    var verifyId:String?
-    var username:String?
-    var vcode:String?
-    var createTime:String?
-    var used:String?
-    var id:Int?
-    var action:String?
+    init() {
+
+    }
+    init(_ decoder: JSONDecoder) {
+		userId   =decoder["userid"].string  
+		mobile =decoder["mobile"].string
+		email  =decoder["email"].string
+		birth  =decoder["birth"].string
+		nickName =decoder["nickname"].string 
+		sex  =decoder["sex"].string 
+		avatar =decoder["avatar"].string
+		country =decoder["country"].string
+		province =decoder["province"].string
+		city =decoder["city"].string
+		address =decoder["address"].string
+		favor  =decoder["favor"].string
+		introduce =decoder["introduce"].string
+		registerTime =decoder["registertime"].string 
+		updateTime  =decoder["updatetime"].string
+		id =decoder["nindex"].integer
+    }
 }

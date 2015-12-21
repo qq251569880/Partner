@@ -42,7 +42,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
              //sportCell = PtnSportListTableViewCell(newStyle:.Subtitle ,newReuseIdentifier:cellId)
             tableView.registerNib(UINib.init(nibName: "PtnSportListTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
             sportCell = tableView.dequeueReusableCellWithIdentifier(cellId) as? PtnSportListTableViewCell;
-            guard (sportCell == nil) else{
+            guard let cel = sportCell  else{
                 print("sport cell is nil")
                 return sportCell!;
             }
@@ -60,6 +60,8 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
             sportCell!.creatorImage.image = avatarImage;
             sportCell!.creatorImage.contentMode = UIViewContentMode.ScaleAspectFill;
         }
+        sportCell!.layer.cornerRadius = 12;
+        sportCell!.layer.masksToBounds = true;
         sportCell!.backgroundColor = indexPath.row % 2 == 1 ? UIColor.greenColor():UIColor.redColor();
         return sportCell!
     }
