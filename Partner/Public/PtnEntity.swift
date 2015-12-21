@@ -114,24 +114,25 @@ struct ActivePlace
 
     }
     init(_ decoder: JSONDecoder) {
-		placeId =decoder["placeid"].string
-		country =decoder["country"].string
-		province =decoder["province"].string
-		city =decoder["city"].string
-		area =decoder["area"].string
-		address =decoder["address"].string
-		introduce =decoder["introduce"].string
-		picture =decoder["picture"].string
-		latitude =decoder["latitude"].string
-		longitude =decoder["longitude"].string
-		price =decoder["price"].string
-		createTime =decoder["createtime"].string
-		updateTime =decoder["updatetime"].string
-		creator =decoder["creator"].string
-		adminName =decoder["adminname"].string
-		adminMobile =decoder["adminmobile"].string
-		state =decoder["state"].string
-		id =decoder["nindex"].integer
+        
+		placeId = decoder["placeid"].string
+		country = decoder["country"].string
+		province = decoder["province"].string
+		city = decoder["city"].string
+		area = decoder["area"].string
+		address = decoder["address"].string
+		introduce = decoder["introduce"].string
+		picture = decoder["picture"].string
+		latitude = decoder["latitude"].string
+		longitude = decoder["longitude"].string
+		price = decoder["price"].string
+		createTime = decoder["createtime"].string
+		updateTime = decoder["updatetime"].string
+		creator = decoder["creator"].string
+		adminName = decoder["adminname"].string
+		adminMobile = decoder["adminmobile"].string
+		state = decoder["state"].string
+		id = decoder["nindex"].integer
 	}
 }
 struct ActiveUser
@@ -226,21 +227,21 @@ struct UserInfo
 
     }
     init(_ decoder: JSONDecoder) {
-		userId   =decoder["userid"].string  
-		mobile =decoder["mobile"].string
-		email  =decoder["email"].string
-		birth  =decoder["birth"].string
-		nickName =decoder["nickname"].string 
-		sex  =decoder["sex"].string 
-		avatar =decoder["avatar"].string
-		country =decoder["country"].string
-		province =decoder["province"].string
-		city =decoder["city"].string
-		address =decoder["address"].string
-		favor  =decoder["favor"].string
-		introduce =decoder["introduce"].string
-		registerTime =decoder["registertime"].string 
-		updateTime  =decoder["updatetime"].string
-		id =decoder["nindex"].integer
+		userId   = decoder["userid"].string
+		mobile = decoder["mobile"].string
+		email  = decoder["email"].string
+		birth  = decoder["birth"].string
+		nickName = decoder["nickname"].string
+		sex  = decoder["sex"].string
+		avatar = decoder["avatar"].string
+		country = decoder["country"].string
+		province = decoder["province"].string
+		city = decoder["city"].string
+		address = decoder["address"].string
+		favor  = decoder["favor"].string
+		introduce = decoder["introduce"].string
+		registerTime = decoder["registertime"].string
+		updateTime  = decoder["updatetime"].string
+		id = decoder["nindex"].integer
     }
 }

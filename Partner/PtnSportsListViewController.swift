@@ -42,7 +42,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
              //sportCell = PtnSportListTableViewCell(newStyle:.Subtitle ,newReuseIdentifier:cellId)
             tableView.registerNib(UINib.init(nibName: "PtnSportListTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
             sportCell = tableView.dequeueReusableCellWithIdentifier(cellId) as? PtnSportListTableViewCell;
-            guard let cel = sportCell  else{
+            guard let cell = sportCell  else{
                 print("sport cell is nil")
                 return sportCell!;
             }
@@ -93,6 +93,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
         return 110;
     }
+
     //PduDelegate协议
     func reloadTable(){
 		print("viewController reload data!!!");
