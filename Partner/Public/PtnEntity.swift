@@ -72,8 +72,8 @@ struct ActiveInfo: JSONJoy
         createTime = decoder["createtime"].string
         startTime = decoder["starttime"].string
         endTime = decoder["endtime"].string
-        member = decoder["member"].string
-        inmember = decoder["inmember"].string
+        member = decoder["member"].integer
+        inmember = decoder["inmember"].integer
         joined = decoder["joined"].string
         partiState = decoder["partistate"].string
         partiResult = decoder["partiresult"].string

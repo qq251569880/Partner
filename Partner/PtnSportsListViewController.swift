@@ -50,16 +50,29 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         
         sportCell!.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
         sportCell!.sportCreator.text = activePdu!.activeInfo![indexPath.row].creatorName;
-        sportCell!.sportTime.text = activePdu!.activeInfo![indexPath.row].startTime;
-        sportCell!.sportPlace.text = activePdu!.activeInfo![indexPath.row].address;
-        sportCell!.sportParticipate.text = activePdu!.activeInfo![indexPath.row].inmember;
+        sportCell!.sportTime.text = "开始时间:\(activePdu!.activeInfo![indexPath.row].startTime)";
+        sportCell!.sportPlace.text = "进行地点：\(activePdu!.activeInfo![indexPath.row].address)";
+        if let num = activePdu!.activeInfo![indexPath.row].inmember {
+			if(num > 0){
+				sportCell!.sportParticipate.text = "已经有\(activePdu!.activeInfo![indexPath.row].inmember)人参与";
+			}else{
+				sportCell!.sportParticipate.text = "暂无人参与";
+			}
+        }else{
+			sportCell!.sportParticipate.text = "暂无人参与";
+        }
+        
         sportCell!.sportIntoduce.text = activePdu!.activeInfo![indexPath.row].introduce;
         let imageUrl = activePdu!.activeInfo![indexPath.row].creatorAvatar;
         if(imageUrl != nil){
             let avatarImage:UIImage = UIImage(data:NSData(contentsOfURL:NSURL(string:imageUrl!)!)!)!;
             sportCell!.creatorImage.image = avatarImage;
-            sportCell!.creatorImage.contentMode = UIViewContentMode.ScaleAspectFill;
+            
+        }else{
+			let avatarImage:UIImage = UIImage(named: "3.png")!
+			portCell!.creatorImage.image = avatarImage;
         }
+        sportCell!.creatorImage.contentMode = UIViewContentMode.ScaleAspectFill;
         sportCell!.layer.cornerRadius = 12;
         sportCell!.layer.masksToBounds = true;
         sportCell!.backgroundColor = indexPath.row % 2 == 1 ? UIColor.greenColor():UIColor.redColor();
@@ -78,16 +91,6 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         
     }
     func tableView(tableView: UITableView, willDisplayCell cell:PtnSportListTableViewCell, indexPath: NSIndexPath){
-        cell.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
-        cell.sportCreator.text = activePdu!.activeInfo![indexPath.row].creatorName;
-        cell.sportTime.text = activePdu!.activeInfo![indexPath.row].startTime;
-        cell.sportPlace.text = activePdu!.activeInfo![indexPath.row].address;
-        cell.sportParticipate.text = activePdu!.activeInfo![indexPath.row].inmember;
-        cell.sportIntoduce.text = activePdu!.activeInfo![indexPath.row].introduce;
-        let imageUrl = activePdu!.activeInfo![indexPath.row].creatorAvatar;
-        let avatarImage:UIImage = UIImage(data:NSData(contentsOfURL:NSURL(string:imageUrl!)!)!)!;
-        cell.creatorImage.image = avatarImage;
-        cell.creatorImage.contentMode = UIViewContentMode.ScaleAspectFill;
         cell.backgroundColor = indexPath.row % 2 == 1 ? UIColor.greenColor():UIColor.redColor();
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
