@@ -99,6 +99,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
 
     @IBAction func orderBtnClick(sender: AnyObject) {
     }
+
     //PduDelegate协议
     func reloadTable(){
 		print("viewController reload data!!!");

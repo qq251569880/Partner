@@ -10,10 +10,14 @@ import UIKit
 
 class PtnUserInfoViewController: UIViewController {
     
+
     @IBOutlet weak var userAvatar: UIImageView!
-    @IBOutlet weak var userNickName: UILabel!
+
+
     @IBOutlet weak var menuList: UITableView!
     @IBOutlet weak var upRightBtn: UIButton!
+    @IBOutlet weak var userNickName: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

@@ -9,7 +9,7 @@
 import UIKit
 
 class PtnHistoryViewController: UIViewController {
-    
+
     @IBOutlet weak var activeList: UITableView!
     override func viewWillAppear(animated: Bool) {
     }
@@ -28,9 +28,9 @@ class PtnHistoryViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     @IBAction func segmentClick(sender: AnyObject) {
     }
-    
     
 }
 
