@@ -10,10 +10,6 @@ import UIKit
 
 class PtnUserInfoViewController: UIViewController {
     
-    @IBOutlet weak var userAvatar: UIImageView!
-    @IBOutlet weak var userNickName: UILabel!
-    @IBOutlet weak var menuList: UITableView!
-    @IBOutlet weak var upRightBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,8 +24,6 @@ class PtnUserInfoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    @IBAction func upRightBtnClick(sender: AnyObject) {
     }
     
     

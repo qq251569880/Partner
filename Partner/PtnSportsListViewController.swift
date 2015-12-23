@@ -42,7 +42,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
              //sportCell = PtnSportListTableViewCell(newStyle:.Subtitle ,newReuseIdentifier:cellId)
             tableView.registerNib(UINib.init(nibName: "PtnSportListTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
             sportCell = tableView.dequeueReusableCellWithIdentifier(cellId) as? PtnSportListTableViewCell;
-            guard let _ = sportCell  else{
+            guard let cell = sportCell  else{
                 print("sport cell is nil")
                 return sportCell!;
             }
@@ -50,8 +50,8 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         
         sportCell!.sportTitle.text = activePdu!.activeInfo![indexPath.row].title;
         sportCell!.sportCreator.text = activePdu!.activeInfo![indexPath.row].creatorName;
-        sportCell!.sportTime.text = "开始时间:\(activePdu!.activeInfo![indexPath.row].startTime!)";
-        sportCell!.sportPlace.text = "进行地点：\(activePdu!.activeInfo![indexPath.row].address!)";
+        sportCell!.sportTime.text = "开始时间:\(activePdu!.activeInfo![indexPath.row].startTime)";
+        sportCell!.sportPlace.text = "进行地点：\(activePdu!.activeInfo![indexPath.row].address)";
         if let num = activePdu!.activeInfo![indexPath.row].inmember {
 			if(num > 0){
 				sportCell!.sportParticipate.text = "已经有\(activePdu!.activeInfo![indexPath.row].inmember)人参与";
@@ -69,8 +69,8 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
             sportCell!.creatorImage.image = avatarImage;
             
         }else{
-			let avatarImage:UIImage = UIImage(named: "default.png")!
-			sportCell!.creatorImage.image = avatarImage;
+			let avatarImage:UIImage = UIImage(named: "3.png")!
+			portCell!.creatorImage.image = avatarImage;
         }
         sportCell!.creatorImage.contentMode = UIViewContentMode.ScaleAspectFill;
         sportCell!.layer.cornerRadius = 12;
@@ -97,8 +97,6 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         return 110;
     }
 
-    @IBAction func orderBtnClick(sender: AnyObject) {
-    }
     //PduDelegate协议
     func reloadTable(){
 		print("viewController reload data!!!");

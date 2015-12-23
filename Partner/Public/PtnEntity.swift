@@ -42,8 +42,8 @@ struct ActiveInfo: JSONJoy
     var createTime:String?
     var startTime:String?
     var endTime:String?
-    var member:Int?
-    var inmember:Int?
+    var member:String?
+    var inmember:String?
     var joined:String?
     var partiState:String?
     var partiResult:String?
