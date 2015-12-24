@@ -102,7 +102,7 @@ class PtnPDU
 	}
 	func setStringParameter(name:String,value:String)
 	{
-		var para:Parameter? = getParameterBy(name)
+		var para:Parameter? = getParameterByName(name)
 		if para == nil{
 			para = Parameter();
 			para!.name=name;
@@ -116,7 +116,7 @@ class PtnPDU
 	}
 	func setFileParameter(name:String,path:String)
 	{
-		var para:Parameter? = getParameterBy(name)
+		var para:Parameter? = getParameterByName(name)
 		if para == nil{
 			para = Parameter();
 			para!.name=name;
@@ -130,7 +130,7 @@ class PtnPDU
 	}
 	func setArrayParameter(name:String,array:Array<String>)
 	{
-		var para:Parameter? = getParameterBy(name)
+		var para:Parameter? = getParameterByName(name)
 		if para == nil{
 			para = Parameter();
 			para!.name=name;

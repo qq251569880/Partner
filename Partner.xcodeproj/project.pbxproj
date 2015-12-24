@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98015A321C2C178C00355B0C /* PtnActiveHistoryPDU .swift in Sources */ = {isa = PBXBuildFile; fileRef = 98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */; };
 		9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */; };
 		98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD681C140CFC00438A7A /* AppDelegate.swift */; };
 		98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6C1C140CFC00438A7A /* Main.storyboard */; };
@@ -122,6 +123,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PtnActiveHistoryPDU .swift"; sourceTree = "<group>"; };
 		987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoPDU.swift; sourceTree = "<group>"; };
 		98A3FD651C140CFC00438A7A /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD681C140CFC00438A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		98A3FE241C1857F900438A7A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */,
 				987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */,
 				98A3FE261C1857F900438A7A /* PtnCommon.swift */,
 				98A3FE271C1857F900438A7A /* PtnEntity.swift */,
@@ -564,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98015A321C2C178C00355B0C /* PtnActiveHistoryPDU .swift in Sources */,
 				9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */,
 				98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */,
 				98A3FE091C179C9A00438A7A /* Upload.swift in Sources */,

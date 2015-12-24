@@ -15,11 +15,13 @@ class PtnActiveHistoryPDU :PtnPDU
 	//继承类实现该函数
 	override func decodeReturnBody(){
 		queryBody = PtnQueryBody(responseJson!.body!);
-		if let lists = queryBody!.list!.array {
-            for activeinfo in lists {
-                historyInfo!.append(HistoryInfo(activeinfo));
+        if let list = queryBody!.list{
+            if let lists = list.array {
+                for activeinfo in lists {
+                    historyInfo!.append(HistoryInfo(activeinfo));
+                }
             }
-		}
+        }
 		delegate?.reloadTable();
 	}
 }

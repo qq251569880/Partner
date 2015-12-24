@@ -34,9 +34,9 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell{
 		let rowNo = indexPath.row;
-        let cellId:String = (rowNo%2==0)?"activeCell1":"activeCell2";
-        var sportCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId,indexPath:indexPath);
-        var label:UILabel = sportCell!.viewWithTag(1);
+        let cellId:String = (rowNo % 2 == 0) ? "activeCell1" : "activeCell2";
+        let sportCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId,forIndexPath:indexPath);
+        let label:UILabel = sportCell!.viewWithTag(1) as! UILabel;
         label.text = activePdu!.historyInfo![indexPath.row].title;
         return sportCell!
     }
@@ -66,13 +66,15 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBAction func segmentClick(sender: AnyObject) {
 		switch sender.selectedSegmentIndex {
 			case 0:
-				activePdu.setUrl("http://yuyanshu.cn:8001/app.php/active/query");
+				activePdu!.setUrl("http://yuyanshu.cn:8001/app.php/active/query");
 				activePdu!.setStringParameter("creatorid",value:"userid");
 				break;
 			case 1:
-				activePdu.setUrl("http://yuyanshu.cn:8001/app.php/parti/query");
+				activePdu!.setUrl("http://yuyanshu.cn:8001/app.php/parti/query");
 		        activePdu!.setStringParameter("userid",value:"userid");
 				break;
+            default:
+                break
 		}
 		activePdu!.requestHttp();
     }

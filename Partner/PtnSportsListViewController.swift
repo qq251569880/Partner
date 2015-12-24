@@ -93,18 +93,22 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
     }
 
     @IBAction func orderBtnClick(sender: AnyObject) {
-		switch sender.selectedSegmentIndex {
-			case 0:
-				activePdu!.setStringParameter("sort",value:"createtime desc");
-				break;
-			case 1:
-				activePdu!.setStringParameter("sort",value:"distance desc");
-				break;
-			case 2:
-				activePdu!.setStringParameter("sort",value:"member desc");
-				break
+        let segBtn = sender as! UISegmentedControl
+		switch segBtn.selectedSegmentIndex {
+        case 0:
+            activePdu!.setStringParameter("sort",value:"createtime desc");
+            break;
+        case 1:
+            activePdu!.setStringParameter("sort",value:"distance desc");
+            break;
+        case 2:
+            activePdu!.setStringParameter("sort",value:"member desc");
+            break
+        default:
+            break
 		}
-		ctivePdu!.requestHttp();
+        activePdu!.activeInfo!.removeAll()
+		activePdu!.requestHttp();
     }
 
     //PduDelegate协议

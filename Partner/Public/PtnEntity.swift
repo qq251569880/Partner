@@ -103,8 +103,9 @@ struct HistoryInfo: JSONJoy
         title = decoder["title"].string
         id = decoder["id"].integer
     }
+}
 
-}struct ActivePlace
+struct ActivePlace
 {
     var placeId:String?
     var country:String?
