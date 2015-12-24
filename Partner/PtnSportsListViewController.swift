@@ -15,15 +15,10 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-/*        let tabImg1:UIImage = UIImage(named: "1")!
-        let tabImg:UIImage = UIImage(CGImage: tabImg1.CGImage!, scale: 2, orientation: .Up)
-        let tabImgSelect1:UIImage = UIImage(named: "1_1")!
-        let tabImgSelect:UIImage = UIImage(CGImage: tabImgSelect1.CGImage!, scale: 2, orientation: .Up)
-        let tabBtn:UITabBarItem = UITabBarItem(title: "足球天下", image: tabImg.imageWithRenderingMode(.AlwaysOriginal), selectedImage: tabImgSelect.imageWithRenderingMode(.AlwaysOriginal))
-        self.tabBarItem = tabBtn;*/
+
         activePdu = PtnActiveInfoQueryPDU(url: "http://yuyanshu.cn:8001/app.php/active/query");
         activePdu!.delegate = self;
-    //activePdu!.setStringParameter("fields",value:"activeid,title,creatorname,creatoravatar,introduce,starttime,country,province,city,area,address,inmember");
+        activePdu!.setSportListViewFields();
         activePdu!.requestHttp();
         sportListTable.delegate = self;
         sportListTable.dataSource = self;
@@ -98,6 +93,18 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
     }
 
     @IBAction func orderBtnClick(sender: AnyObject) {
+		switch sender.selectedSegmentIndex {
+			case 0:
+				activePdu!.setStringParameter("sort",value:"createtime desc");
+				break;
+			case 1:
+				activePdu!.setStringParameter("sort",value:"distance desc");
+				break;
+			case 2:
+				activePdu!.setStringParameter("sort",value:"member desc");
+				break
+		}
+		ctivePdu!.requestHttp();
     }
 
     //PduDelegate协议

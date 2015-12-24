@@ -92,37 +92,70 @@ class PtnPDU
 	{
 		accessToken = token;
 	}
+	func getParameterByName(name:String) -> Parameter?{
+		for para in parameterList {
+			if para.name == name {
+				return para
+			}
+		}
+		return nil;
+	}
 	func setStringParameter(name:String,value:String)
 	{
-		var para:Parameter = Parameter();
-		para.name=name;
-		para.value=value;
-		para.type = .String;
-		parameterList.append(para);
+		var para:Parameter? = getParameterBy(name)
+		if para == nil{
+			para = Parameter();
+			para!.name=name;
+			para!.value=value;
+			para!.type = .String;
+			parameterList.append(para!);
+		}else{
+			para!.value=value;
+			para!.type = .String;
+		}
 	}
 	func setFileParameter(name:String,path:String)
 	{
-		var para:Parameter = Parameter();
-		para.name=name;
-		para.path=path;//路径名
-		para.type = .File;
-		parameterList.append(para);
+		var para:Parameter? = getParameterBy(name)
+		if para == nil{
+			para = Parameter();
+			para!.name=name;
+			para!.path=path;//路径名
+			para!.type = .File;
+			parameterList.append(para!);
+		}else{
+			para!.path=path;//路径名
+			para!.type = .File;
+		}
 	}
 	func setArrayParameter(name:String,array:Array<String>)
 	{
-		var para:Parameter = Parameter();
-		para.name=name;
-		para.type = .Array;
-		para.array = array;
-		parameterList.append(para);
+		var para:Parameter? = getParameterBy(name)
+		if para == nil{
+			para = Parameter();
+			para!.name=name;
+			para!.type = .Array;
+			para!.array = array;
+			parameterList.append(para!);
+		}else{
+			para!.type = .Array;
+			para!.array = array;
+		}
 	}
 	func clearParameter()
 	{
-		
+		parameterList.removeAll();
 	}
 	func unsetParameter(name:String)
 	{
-		
+		var pos:Int = 0;
+		for para in parameterList {
+			if para.name == name {
+				parameterList.removeAtIndex(pos)
+				break;
+			}
+			pos++;
+		}
 	}
 	
 	func requestHttp()

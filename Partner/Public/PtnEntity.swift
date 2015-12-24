@@ -90,7 +90,21 @@ struct ActiveInfo: JSONJoy
     }
 
 }
-struct ActivePlace
+struct HistoryInfo: JSONJoy
+{
+    var activeId:String?
+    var title:String?
+    var id:Int?
+    init() {
+
+    }
+    init(_ decoder: JSONDecoder) {
+        activeId = decoder["activeid"].string
+        title = decoder["title"].string
+        id = decoder["id"].integer
+    }
+
+}struct ActivePlace
 {
     var placeId:String?
     var country:String?
