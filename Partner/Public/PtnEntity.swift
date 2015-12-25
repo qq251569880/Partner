@@ -54,8 +54,8 @@ struct ActiveInfo: JSONJoy
     var city:String?
     var area:String?
     var address:String?
-    var latitude:String?
-    var longitude:String?
+    var latitude:Float?
+    var longitude:Float?
     var id:Int?
     init() {
 
@@ -84,8 +84,8 @@ struct ActiveInfo: JSONJoy
         city = decoder["city"].string
         area = decoder["area"].string
         address = decoder["address"].string
-        latitude = decoder["latitude"].string
-        longitude = decoder["longitude"].string
+        latitude = decoder["latitude"].float
+        longitude = decoder["longitude"].float
         id = decoder["id"].integer
     }
 
@@ -113,8 +113,8 @@ struct ActivePlace
     var city:String?
     var area:String?
     var address:String?
-    var latitude:String?
-    var longitude:String?
+    var latitude:Float?
+    var longitude:Float?
     var introduce:String?
     var picture:String?
     var price:String?
@@ -138,8 +138,8 @@ struct ActivePlace
 		address = decoder["address"].string
 		introduce = decoder["introduce"].string
 		picture = decoder["picture"].string
-		latitude = decoder["latitude"].string
-		longitude = decoder["longitude"].string
+		latitude = decoder["latitude"].float
+		longitude = decoder["longitude"].float
 		price = decoder["price"].string
 		createTime = decoder["createtime"].string
 		updateTime = decoder["updatetime"].string

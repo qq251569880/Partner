@@ -11,13 +11,17 @@ class PtnCreateResultPDU :PtnPDU
 {
     var createBody:PtnCreateBody?
     var objectKey:String?
-    override init(){
+    //识别操作
+    var actionId:String;
+    override init(actionid:String=""){
         super.init();
+        actionId = actionid;
     }
-    init(url:String,id:String){
+    init(url:String,id:String,actionid:String=""){
         super.init();
         requestUrl = url;
         objectKey = id;
+        actionId = actionid;
     }
     
     override func decodeReturnBody(){

@@ -69,7 +69,8 @@ struct PtnJson:JSONJoy{
     }
 }
 protocol PduDelegate{
-	func reloadTable()
+	optional func reloadTable();
+    optional func returnSuccess(actionId:String);
 }
 class PtnPDU
 {

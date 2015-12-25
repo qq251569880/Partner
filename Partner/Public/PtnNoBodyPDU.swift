@@ -9,11 +9,14 @@
 import Foundation
 class PtnNoBodyPDU :PtnPDU
 {
-    override init(){
+    var actionId:String;
+    override init(actionid:String=""){
         super.init();
+        actionId = actionid;
     }
-    init(url:String){
+    init(url:String,actionid:String=""){
         super.init();
         requestUrl = url;
+        actionId = actionid;
     }
 }
