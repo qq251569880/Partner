@@ -22,7 +22,7 @@ class PtnActiveInfoQueryPDU :PtnPDU
                 }
             }
         }
-		delegate?.reloadTable();
+		delegate?.reloadTable!();
 	}
 	func setSportListViewFields(){
 		self.setStringParameter("fields",value:"activeid,title,creatorname,creatoravatar,introduce,starttime,country,province,city,area,address,inmember");

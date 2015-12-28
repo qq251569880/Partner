@@ -11,21 +11,21 @@ import UIKit
 class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,PduDelegate {
     
 
-    @IBOutlet weak var userAvatar: UIImageView!
 
 
     @IBOutlet weak var menuList: UITableView!
-    @IBOutlet weak var upRightBtn: UIButton!
+    @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userNickName: UILabel!
+    @IBOutlet weak var upRightBtn: UIButton!
     var userPdu:PtnUserInfoPDU?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        userPdu = PtnActiveInfoQueryPDU(url: "http://yuyanshu.cn:8001/app.php/user/query");
+        userPdu = PtnUserInfoPDU(url: "http://yuyanshu.cn:8001/app.php/user/query");
         userPdu!.delegate = self;
         menuList.delegate = self;
         menuList.dataSource = self;
-		let accessToken = getUserInfoString("accesstoken");
+		let accessToken = getLocalUserString("accesstoken");
         if accessToken == nil{
             let avatarImage:UIImage = UIImage(named: "default.png")!
 		    userAvatar.image = avatarImage;
@@ -42,29 +42,32 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell{
 		let rowNo = indexPath.row;
         let cellId:String = "menuCell";
-        let menuCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId,forIndexPath:indexPath);
-        let label:UILabel = menuCell!.viewWithTag(1) as! UILabel;
+        var menuCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId)
+        //let label:UILabel = menuCell!.viewWithTag(1) as! UILabel;
+        if menuCell == nil {
+            menuCell = UITableViewCell(style:.Subtitle,reuseIdentifier:cellId)
+        }
         switch rowNo {
             case 0:
-                label.text = "完善资料";
+                menuCell?.textLabel!.text = "完善资料";
                 break;
             case 1:
-                label.text = "场地收藏";
+                menuCell?.textLabel!.text = "场地收藏";
                 break;
             case 2:
-                label.text = "朋友分享";
+                menuCell?.textLabel!.text = "朋友分享";
                 break;
             case 3:
-                label.text = "联系我们";
+                menuCell?.textLabel!.text = "联系我们";
                 break;
             case 4:
-                label.text = "退出登录";
+                menuCell?.textLabel!.text = "退出登录";
                 break;
             default:
                 break;
         }
         
-        return sportCell!
+        return menuCell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
@@ -82,13 +85,13 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     //PduDelegate协议
     func reloadTable(){
 		print("viewController reload data!!!");
-        upRightBtn.visible= false;
-        let imageUrl = getUserInfoString("avatar");
+        upRightBtn.hidden = true;
+        let imageUrl = getLocalUserString("avatar");
         if(imageUrl != nil){
             let avatarImage:UIImage = UIImage(data:NSData(contentsOfURL:NSURL(string:imageUrl!)!)!)!;
             userAvatar.image = avatarImage;
         }
-        let nickName = getUserInfoString("nickname");
+        let nickName = getLocalUserString("nickname");
         if (nickName != nil){
             userNickName.text = nickName;
         }
@@ -97,9 +100,8 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     func returnSuccess(actionId:String){
         
     }
-    @IBAction func upRightBtnClick(sender: AnyObject) {
-        
-    }
+    @IBOutlet weak var upRightBtnClick: UIButton!
+
     
     
 }

@@ -11,11 +11,8 @@ class PtnCreateResultPDU :PtnPDU
 {
     var createBody:PtnCreateBody?
     var objectKey:String?
-    //识别操作
-    var actionId:String;
-    override init(actionid:String=""){
+    override init(){
         super.init();
-        actionId = actionid;
     }
     init(url:String,id:String,actionid:String=""){
         super.init();

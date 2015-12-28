@@ -1,7 +1,7 @@
 import Foundation
 func getLocalUserString(key:String?) -> String? {
     if let k = key {
-        let userDefaultes:NSUserDefaults = NSUserDefaults.standardUserDefaults();
+        let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults();
         return userDefaults.stringForKey(k);
     }
     return nil;
@@ -9,7 +9,7 @@ func getLocalUserString(key:String?) -> String? {
 func setLocalUserString(key:String?,value:String?) -> Bool {
     if let k = key{
         if let v = value {
-            let userDefaultes:NSUserDefaults = NSUserDefaults.standardUserDefaults();
+            let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults();
             userDefaults.setObject(v as AnyObject,forKey:k);
         }else{
             return false;
@@ -17,10 +17,11 @@ func setLocalUserString(key:String?,value:String?) -> Bool {
     }else{
         return false;
     }
+    return true;
 }
 func getLocalUserFloat(key:String?) -> Float? {
     if let k = key {
-        let userDefaultes:NSUserDefaults = NSUserDefaults.standardUserDefaults();
+        let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults();
         return userDefaults.floatForKey(k);
     }
     return nil;
@@ -28,7 +29,7 @@ func getLocalUserFloat(key:String?) -> Float? {
 func setLocalUserFloat(key:String?,value:Float?) -> Bool {
     if let k = key{
         if let v = value {
-            let userDefaultes:NSUserDefaults = NSUserDefaults.standardUserDefaults();
+            let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults();
             userDefaults.setFloat(v,forKey:k);
         }else{
             return false;
@@ -36,6 +37,7 @@ func setLocalUserFloat(key:String?,value:Float?) -> Bool {
     }else{
         return false;
     }
+    return true
 }
 /*
 userid              用户id
@@ -56,4 +58,4 @@ currentprovince     用户当前所处位置的省份
 currentcity         用户当前所处位置的城市
 currentlat          用户当前所处位置的纬度
 currentlon          用户当前所处位置的经度
-*;
+*/

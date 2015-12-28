@@ -68,7 +68,7 @@ struct PtnJson:JSONJoy{
         body=decoder["body"];
     }
 }
-protocol PduDelegate{
+@objc protocol PduDelegate{
 	optional func reloadTable();
     optional func returnSuccess(actionId:String);
 }
@@ -78,6 +78,7 @@ class PtnPDU
 	var accessToken:String?;
 	var requestMethod = "POST";
 	var parameterList:[Parameter];
+    var actionId:String?;
 	
 	var responseData:NSData?;
 	var responseJson:PtnJson?;

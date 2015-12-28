@@ -89,7 +89,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         cell.backgroundColor = indexPath.row % 2 == 1 ? UIColor.greenColor():UIColor.redColor();
     }
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
-        return 110;
+        return 112;
     }
 
     @IBAction func orderBtnClick(sender: AnyObject) {

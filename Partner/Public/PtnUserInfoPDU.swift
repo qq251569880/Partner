@@ -22,6 +22,6 @@ class PtnUserInfoPDU :PtnPDU
                 }
             }
         }
-		delegate?.reloadTable();
+		delegate?.reloadTable!();
 	}
 }
