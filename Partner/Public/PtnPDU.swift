@@ -71,6 +71,8 @@ struct PtnJson:JSONJoy{
 @objc protocol PduDelegate{
 	optional func reloadTable();
     optional func returnSuccess(actionId:String);
+    optional func requestFailed(err:ErrInfo){
+    }
 }
 class PtnPDU
 {
@@ -78,6 +80,7 @@ class PtnPDU
 	var accessToken:String?;
 	var requestMethod = "POST";
 	var parameterList:[Parameter];
+    var requestHeader:[String:String]?;
     var actionId:String?;
 	
 	var responseData:NSData?;
@@ -144,6 +147,9 @@ class PtnPDU
 			para!.array = array;
 		}
 	}
+    func setHeader(key:String,value:String){
+        requestHeader = [key:value];
+    }
 	func clearParameter()
 	{
 		parameterList.removeAll();
@@ -176,18 +182,20 @@ class PtnPDU
 					}
 				}
 				
-				let opt = try HTTP.POST(requestUrl!, parameters: params)
+                let opt = try HTTP.POST(requestUrl!, parameters: params,headers:requestHeader)
 				opt.start { response in
 					if let error = response.error {
-						print("response got an error: \(error)")
-						
+						print("response got an error: \(error)");
+                        let err = ErrInfo(code:ERR_REQUEST_RESPONSE,info:"response got an error: \(error)");
+						delegate!.requestFailed(err);
 					}
-                    
                     self.decodeResponse(JSONDecoder(response.data))
 				}
 			}
 		} catch let error {
 			print("catch got an error: \(error)")
+            let err = ErrInfo(code:ERR_REQUEST_EXCEPTION,info:"catch got an error: \(error)");
+			delegate!.requestFailed(err);
 		}		
 		
 	}
@@ -199,16 +207,25 @@ class PtnPDU
 			if( statu == 0){
 				if responseJson!.body != nil {
 					decodeReturnBody();
-				}
+                }else{
+                    decodeNoBodySucc();
+                }
 			}else{
-				print("server returned err ");
+			    print("server returned err ");
+                if let _err = responseJson!.head!.error{
+                    let err = ErrInfo(code:_err.errorcode,info:"server returned err: \(_err.description)");
+			        delegate!.requestFailed(err);
+                }
 			}
 		}else{
 			print("decode json failed ");
+			delegate!.requestFailed(jsonFailed);
 		}
 	}
 
 	//由继承类实现该函数
 	func decodeReturnBody(){
 	}
+    func decodeNoBodySucc(){
+    }
 }

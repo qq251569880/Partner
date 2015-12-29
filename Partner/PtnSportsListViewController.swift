@@ -16,7 +16,7 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        activePdu = PtnActiveInfoQueryPDU(url: "http://yuyanshu.cn:8001/app.php/active/query");
+        activePdu = PtnActiveInfoQueryPDU(url: "\(serverUrl)active/query");
         activePdu!.delegate = self;
         activePdu!.setSportListViewFields();
         activePdu!.requestHttp();

@@ -42,6 +42,7 @@ func setLocalUserFloat(key:String?,value:Float?) -> Bool {
 /*
 userid              用户id
 accesstoken         登录token
+username            用户名，手机或者邮箱的一种，以用户输入为准
 mobile              用户手机
 email               用户邮箱
 nickname            用户昵称

@@ -29,6 +29,16 @@ struct PtnCreateBody:JSONJoy{
         objectValue = decoder[objectId!].string;
     }
 }
+struct PtnLoginBody:JSONJoy{
+	var accessToken:String?;
+	var userId:String?;
+	init(){
+	}
+	init(_ decoder:JSONDecoder) {
+		accessToken = decoder['token'].string;
+		userId = decoder['accountId'].string;
+	}
+}
 struct ActiveInfo: JSONJoy
 {
     var activeId:String?

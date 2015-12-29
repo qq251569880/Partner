@@ -17,7 +17,7 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        activePdu = PtnActiveHistoryPDU(url: "http://yuyanshu.cn:8001/app.php/active/query");
+        activePdu = PtnActiveHistoryPDU(url: "\(serverUrl)active/query");
         activePdu!.delegate = self;
         activePdu!.setStringParameter("fields",value:"activeid,title");
         activePdu!.setStringParameter("creatorid",value:"userid");

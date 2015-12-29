@@ -17,4 +17,7 @@ class PtnNoBodyPDU :PtnPDU
         requestUrl = url;
         actionId = actionid;
     }
+    override func decodeNoBodySucc(){
+        delegate!.returnSuccess!(actionId);
+    }
 }
