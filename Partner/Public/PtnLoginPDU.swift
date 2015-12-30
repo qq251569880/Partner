@@ -19,7 +19,7 @@ class PtnLoginPDU :PtnPDU
     }
     
     override func decodeReturnBody(){
-        loginBody = PtnLoginBody(decoder:responseJson!.body!);
-        delegate!.returnSuccess!("login");
+        loginBody = PtnLoginBody(responseJson!.body!);
+        delegate!.returnSuccess("login");
     }
 }

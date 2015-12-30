@@ -22,6 +22,6 @@ class PtnActiveHistoryPDU :PtnPDU
                 }
             }
         }
-		delegate?.reloadTable!();
+		delegate?.reloadTable();
 	}
 }

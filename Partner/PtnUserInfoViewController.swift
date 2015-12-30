@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,PduDelegate {
+class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,PduDelegate,UIAlertViewDelegate {
     
 
 
@@ -16,8 +16,8 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet weak var menuList: UITableView!
     @IBOutlet weak var userAvatar: UIImageView!
     @IBOutlet weak var userNickName: UILabel!
-    @IBOutlet weak var upRightBtn: UIButton!
-    @IBOutlet weak var upRightBtnClick: UIButton!
+    @IBOutlet weak var registBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     var userPdu:PtnUserInfoPDU?
     var loginPdu:PtnLoginPDU?
     override func viewDidLoad() {
@@ -29,7 +29,9 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
         if accessToken == nil{
             let avatarImage:UIImage = UIImage(named: "default.png")!
 		    userAvatar.image = avatarImage;
-            userNickName.text = "请登录";
+            userNickName.hidden = true;
+            loginBtn.hidden = false;
+            registBtn.hidden = false;
         }else{
             self.displayUserInfo();
         }
@@ -89,22 +91,22 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
         for userinfo in userPdu!.userInfo! {
             if(userinfo.userId == userid){
                 if let nickname = userinfo.nickName {
-                    setLocalUserString("nickname",nickname);
+                    setLocalUserString("nickname",value: nickname);
                 }
                 if let avatar = userinfo.avatar {
-                    setLocalUserString("avatar",avatar);
+                    setLocalUserString("avatar",value: avatar);
                 }
                 if let country = userinfo.country {
-                    setLocalUserString("country",country);
+                    setLocalUserString("country",value: country);
                 }
                 if let province = userinfo.province {
-                    setLocalUserString("province",province);
+                    setLocalUserString("provalue: vince",value: province);
                 }
                 if let city = userinfo.city {
-                    setLocalUserString("city",city);
+                    setLocalUserString("city",value:city);
                 }
                 if let introduce = userinfo.introduce {
-                    setLocalUserString("introduce",introduce);
+                    setLocalUserString("intrvalue: oduce",value:introduce);
                 }
                 break;
             }
@@ -113,7 +115,8 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
 	}
     func displayUserInfo(){
 		print("viewController reload data!!!");
-        upRightBtn.hidden = true;
+        loginBtn.hidden = true;
+        registBtn.hidden = true;
         let imageUrl = getLocalUserString("avatar");
         if(imageUrl != nil){
             let avatarImage:UIImage = UIImage(data:NSData(contentsOfURL:NSURL(string:imageUrl!)!)!)!;
@@ -121,48 +124,53 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
         }
         let nickName = getLocalUserString("nickname");
         if (nickName != nil){
+            userNickName.hidden = false;
             userNickName.text = nickName;
         }
     }
     func returnSuccess(actionId:String){
         if(actionId == "login"){
-            setLocalUserString("accesstoken",loginPdu!.loginBody!.accessToken!);
-            setLocalUserString("userid",loginPdu!.loginBody!.userId!);
+            setLocalUserString("accesstoken",value: loginPdu!.loginBody!.accessToken!);
+            setLocalUserString("userid",value: loginPdu!.loginBody!.userId!);
             userPdu = PtnUserInfoPDU(url: "\(serverUrl)user/query");
-            userPdu!.setHeader("accesstoken",loginPdu!.loginBody!.accessToken!);
+            userPdu!.setHeader("accesstoken",value: loginPdu!.loginBody!.accessToken!);
             userPdu!.delegate = self;
             userPdu!.requestHttp();
         }
     }
-    func regAction(){
-        //进入注册页面
+
+    @IBAction func registBtnClick(sender: AnyObject) {
     }
-    func loginAction(){
-        let alert = UIAlertView(title:"登录",message:"请输入用户名和密码",delegate:self,cancelButtonTitle:"登录",otherButtonTitle:"忘记密码",nil);
+    @IBAction func loginBtnClick(sender: AnyObject) {
+        let alert = UIAlertView(title:"登录",message:"请输入用户名和密码",delegate:self,cancelButtonTitle:"登录",otherButtonTitles:"忘记密码");
         alert.alertViewStyle = .LoginAndPasswordInput;
-        alert.textFieldAt(1).keyboardType = .NumberPad;
+        alert.textFieldAtIndex(1)!.keyboardType = .NumberPad;
         alert.show();
     }
-    func alertView(alertView:UIAlertView,clickedButtonAtIndex:buttonIndex){
-        if（buttonIndex == 0){
+    @objc func alertView(alertView:UIAlertView,clickedButtonAtIndex buttonIndex:Int){
+        if buttonIndex == 0 {
             let nameField = alertView.textFieldAtIndex(0);
             let passField = alertView.textFieldAtIndex(1);
             loginPdu = PtnLoginPDU(url: "\(serverUrl)login");
             loginPdu!.delegate = self;
-            loginPdu!.setStringParameter("username",nameField.text);
-            loginPdu!.setStringParameter("password",passField.text);
+            loginPdu!.setStringParameter("username",value: nameField!.text!);
+            loginPdu!.setStringParameter("password",value: passField!.text!);
             loginPdu!.requestHttp();
         }else{
             //进入忘记密码页面
         }
     }
     func willPresentAlertView(alertView:UIAlertView){
-        for view in alertView.subViews{
-            if view.isKindOfClass(UILabel.class) {
+        for view in alertView.subviews{
+            if view.isKindOfClass(UILabel) {
                 let label = view;
-                label.textAligenment = .Left;
+                //label.textAligenment = .Left;
             }
         }
+    }
+
+    func requestFailed(err: ErrInfo) {
+        
     }
 }
 

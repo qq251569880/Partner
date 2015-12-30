@@ -18,6 +18,6 @@ class PtnNoBodyPDU :PtnPDU
         actionId = actionid;
     }
     override func decodeNoBodySucc(){
-        delegate!.returnSuccess!(actionId);
+        delegate!.returnSuccess(actionId!);
     }
 }

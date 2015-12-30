@@ -68,11 +68,10 @@ struct PtnJson:JSONJoy{
         body=decoder["body"];
     }
 }
-@objc protocol PduDelegate{
-	optional func reloadTable();
-    optional func returnSuccess(actionId:String);
-    optional func requestFailed(err:ErrInfo){
-    }
+protocol PduDelegate{
+	func reloadTable();
+    func returnSuccess(actionId:String);
+    func requestFailed(err:ErrInfo)
 }
 class PtnPDU
 {
@@ -187,7 +186,7 @@ class PtnPDU
 					if let error = response.error {
 						print("response got an error: \(error)");
                         let err = ErrInfo(code:ERR_REQUEST_RESPONSE,info:"response got an error: \(error)");
-						delegate!.requestFailed(err);
+						self.delegate!.requestFailed(err);
 					}
                     self.decodeResponse(JSONDecoder(response.data))
 				}
@@ -213,7 +212,7 @@ class PtnPDU
 			}else{
 			    print("server returned err ");
                 if let _err = responseJson!.head!.error{
-                    let err = ErrInfo(code:_err.errorcode,info:"server returned err: \(_err.description)");
+                    let err = ErrInfo(code:_err.errorcode!,info:"server returned err: \(_err.description)");
 			        delegate!.requestFailed(err);
                 }
 			}
@@ -222,7 +221,6 @@ class PtnPDU
 			delegate!.requestFailed(jsonFailed);
 		}
 	}
-
 	//由继承类实现该函数
 	func decodeReturnBody(){
 	}

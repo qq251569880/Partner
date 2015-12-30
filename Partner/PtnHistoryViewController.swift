@@ -78,6 +78,11 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
 		}
 		activePdu!.requestHttp();
     }
-    
+    func returnSuccess(actionId: String) {
+        
+    }
+    func requestFailed(err: ErrInfo) {
+        
+    }
 }
 

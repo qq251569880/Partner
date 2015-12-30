@@ -116,5 +116,11 @@ class PtnSportsListViewController: UIViewController,UITableViewDataSource,UITabl
 		print("viewController reload data!!!");
 		sportListTable.reloadData();
 	}
+    func returnSuccess(actionId: String) {
+        
+    }
+    func requestFailed(err: ErrInfo) {
+        
+    }
 }
 

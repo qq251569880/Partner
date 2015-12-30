@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/Public/PtnPDU.swift"
-            timestampString = "472745265.249281"
+            timestampString = "473178355.428568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "clearParameter()"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "setArrayParameter(_:array:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/Public/PtnPDU.swift"
-            timestampString = "472745265.249281"
+            timestampString = "473178355.428568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "setArrayParameter(_:array:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "472746242.22059"
+            timestampString = "473178540.374797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -490,13 +490,138 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "472746499.719962"
+            timestampString = "473178540.374797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Partner/PtnUserInfoViewController.swift"
+            timestampString = "473178540.374797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "loginBtnClick(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Partner/PtnUserInfoViewController.swift"
+            timestampString = "473178540.374797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "alertView(_:clickedButtonAtIndex:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Partner/PtnUserInfoViewController.swift"
+            timestampString = "473178540.374797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "PtnUserInfoViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Partner.PtnUserInfoViewController.userPdu.getter : Swift.Optional&lt;Partner.PtnUserInfoPDU&gt;"
+                  moduleName = "Partner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghongdai/Documents/workspace/Partner/Partner/PtnUserInfoViewController.swift"
+                  timestampString = "473178373.619343"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Partner.PtnUserInfoViewController.userPdu.setter : Swift.Optional&lt;Partner.PtnUserInfoPDU&gt;"
+                  moduleName = "Partner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghongdai/Documents/workspace/Partner/Partner/PtnUserInfoViewController.swift"
+                  timestampString = "473178373.619881"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Partner.PtnUserInfoViewController.userPdu.materializeForSet : Swift.Optional&lt;Partner.PtnUserInfoPDU&gt;"
+                  moduleName = "Partner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghongdai/Documents/workspace/Partner/Partner/PtnUserInfoViewController.swift"
+                  timestampString = "473178373.620211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Partner.PtnUserInfoViewController.init (Partner.PtnUserInfoViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Partner.PtnUserInfoViewController"
+                  moduleName = "Partner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghongdai/Documents/workspace/Partner/Partner/PtnUserInfoViewController.swift"
+                  timestampString = "473178373.620555"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "410">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Partner.PtnUserInfoViewController.init (Partner.PtnUserInfoViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Partner.PtnUserInfoViewController&gt;"
+                  moduleName = "Partner"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhanghongdai/Documents/workspace/Partner/Partner/PtnUserInfoViewController.swift"
+                  timestampString = "473178373.620918"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

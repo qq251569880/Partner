@@ -35,8 +35,8 @@ struct PtnLoginBody:JSONJoy{
 	init(){
 	}
 	init(_ decoder:JSONDecoder) {
-		accessToken = decoder['token'].string;
-		userId = decoder['accountId'].string;
+		accessToken = decoder["token"].string;
+		userId = decoder["accountId"].string;
 	}
 }
 struct ActiveInfo: JSONJoy

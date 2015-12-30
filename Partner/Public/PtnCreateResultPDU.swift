@@ -23,6 +23,6 @@ class PtnCreateResultPDU :PtnPDU
     
     override func decodeReturnBody(){
         createBody = PtnCreateBody(decoder:responseJson!.body!,id:objectKey!);
-        delegate!.returnSuccess!(actionId);
+        delegate!.returnSuccess(actionId!);
     }
 }

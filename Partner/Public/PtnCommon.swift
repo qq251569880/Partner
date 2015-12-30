@@ -22,4 +22,4 @@ let ERR_REQUEST_EXCEPTION:Int = 1003;
 
 
 let jsonFailed:ErrInfo = ErrInfo(code:ERR_JSON_DECODE,info:"decode json string failed");
-let requestFailed:ErrInfo = ErrInfo(code:ERR_REQUEST,info:"Http requestFailed");
+let requestFailed:ErrInfo = ErrInfo(code:ERR_REQUEST_RESPONSE,info:"Http requestFailed");

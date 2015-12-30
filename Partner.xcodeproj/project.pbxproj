@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		98015A321C2C178C00355B0C /* PtnActiveHistoryPDU .swift in Sources */ = {isa = PBXBuildFile; fileRef = 98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */; };
 		9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */; };
+		98A0A9691C3416140041C0FC /* PtnLoginPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */; };
+		98A0A9731C3416200041C0FC /* PtnRegPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9721C3416200041C0FC /* PtnRegPassViewController.swift */; };
 		98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD681C140CFC00438A7A /* AppDelegate.swift */; };
 		98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6C1C140CFC00438A7A /* Main.storyboard */; };
 		98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6F1C140CFC00438A7A /* Assets.xcassets */; };
@@ -127,6 +129,8 @@
 /* Begin PBXFileReference section */
 		98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PtnActiveHistoryPDU .swift"; sourceTree = "<group>"; };
 		987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoPDU.swift; sourceTree = "<group>"; };
+		98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnLoginPDU.swift; sourceTree = "<group>"; };
+		98A0A9721C3416200041C0FC /* PtnRegPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnRegPassViewController.swift; sourceTree = "<group>"; };
 		98A3FD651C140CFC00438A7A /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD681C140CFC00438A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A3FD6D1C140CFC00438A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -230,17 +234,18 @@
 				98A3FE241C1857F900438A7A /* Public */,
 				98A3FDD41C179C9900438A7A /* JSONJoy */,
 				98A3FDE21C179C9A00438A7A /* SwiftHTTP */,
+				98A3FD6F1C140CFC00438A7A /* Assets.xcassets */,
 				98A3FD681C140CFC00438A7A /* AppDelegate.swift */,
+				98A3FD741C140CFC00438A7A /* Info.plist */,
+				98A3FD711C140CFC00438A7A /* LaunchScreen.storyboard */,
+				98A3FD6C1C140CFC00438A7A /* Main.storyboard */,
+				98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */,
+				98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */,
 				98A3FD9C1C145DA700438A7A /* PtnSportsListViewController.swift */,
 				98A3FD9A1C145D7000438A7A /* PtnHistoryViewController.swift */,
 				98A3FD9E1C145EE800438A7A /* PtnUserInfoViewController.swift */,
-				98A3FD6C1C140CFC00438A7A /* Main.storyboard */,
-				98A3FD6F1C140CFC00438A7A /* Assets.xcassets */,
-				98A3FD711C140CFC00438A7A /* LaunchScreen.storyboard */,
-				98A3FD741C140CFC00438A7A /* Info.plist */,
 				98A3FD961C140FD800438A7A /* PtnRootViewTabController.swift */,
-				98A3FDD01C15C4D700438A7A /* PtnSportListTableViewCell.swift */,
-				98A3FDD11C15C4D700438A7A /* PtnSportListTableViewCell.xib */,
+				98A0A9721C3416200041C0FC /* PtnRegPassViewController.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 		98A3FE241C1857F900438A7A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */,
 				98C73FD11C2D820C00C492A0 /* PtnUserDefault.swift */,
 				98C73FD21C2D820C00C492A0 /* PtnUserInfoPDU.swift */,
 				98015A311C2C178C00355B0C /* PtnActiveHistoryPDU .swift */,
@@ -580,6 +586,7 @@
 				98A3FE091C179C9A00438A7A /* Upload.swift in Sources */,
 				98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */,
 				98A3FDFF1C179C9A00438A7A /* HTTPSecurity.swift in Sources */,
+				98A0A9731C3416200041C0FC /* PtnRegPassViewController.swift in Sources */,
 				98A70D921C24FDB0004C4819 /* PtnCreateResultPDU.swift in Sources */,
 				98A3FD9D1C145DA700438A7A /* PtnSportsListViewController.swift in Sources */,
 				98A3FDFE1C179C9A00438A7A /* CHANGELOG.md in Sources */,
@@ -590,6 +597,7 @@
 				98A3FE041C179C9A00438A7A /* Request.swift in Sources */,
 				98A70D901C24FD9B004C4819 /* PtnNoBodyPDU.swift in Sources */,
 				98A3FD971C140FD800438A7A /* PtnRootViewTabController.swift in Sources */,
+				98A0A9691C3416140041C0FC /* PtnLoginPDU.swift in Sources */,
 				98A3FE051C179C9A00438A7A /* StatusCode.swift in Sources */,
 				98A3FDFA1C179C9A00438A7A /* README.md in Sources */,
 				98A3FE031C179C9A00438A7A /* README.md in Sources */,
