@@ -96,6 +96,9 @@ class PtnPDU
 	{
 		accessToken = token;
 	}
+    func setActionId(actionid:String){
+        actionId =  actionid;
+    }
 	func getParameterByName(name:String) -> Parameter?{
 		for para in parameterList {
 			if para.name == name {
