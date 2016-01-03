@@ -39,8 +39,8 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
     @IBOutlet weak var resetVerify: UITextField!;
     @IBOutlet weak var resetNewPassword: UITextField!;
     
-    var regVcodeBtn:UIButton;
-    var changeVcodeBtn:UIButton;
+    @IBOutlet weak var regVcodeBtn: UIButton!
+    @IBOutlet weak var changeVcodeBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,10 +48,10 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
         regView.frame = viewLoc;
         changePassView.frame = viewLoc;       
         resetPassView.frame = viewLoc;       
-        vcodePdu = PtnNoBodyPDU("\(serverUrl)verify/send",actionid:"vcode");
-        forgetPassPdu = PtnNoBodyPDU("\(serverUrl)user/modifypass",actionid:"modifypass");
-        changePassPdu = PtnNoBodyPDU("\(serverUrl)user/forgotpass",actionid:"forgotpass");
-        loginPdu = PtnLoginPDU("\(serverUrl)user/reg");
+        vcodePdu = PtnNoBodyPDU(url: "\(serverUrl)verify/send",actionid:"vcode");
+        forgetPassPdu = PtnNoBodyPDU(url: "\(serverUrl)user/modifypass",actionid:"modifypass");
+        changePassPdu = PtnNoBodyPDU(url: "\(serverUrl)user/forgotpass",actionid:"forgotpass");
+        loginPdu = PtnLoginPDU(url: "\(serverUrl)user/reg");
         switch userAction {
         case 0:
             changePassView.hidden = true;
@@ -105,41 +105,41 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
     }
     
     @IBAction func regSendVerify(sender: AnyObject) {
-        if regUserName.text == nill || regUserName.text == "" {
-            var alertController = UIAlertController(title: "提示", message: "请输入用户名", preferredStyle: .Alert);
-            var okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
+        if regUserName.text == nil || regUserName.text == "" {
+            let alertController = UIAlertController(title: "提示", message: "请输入用户名", preferredStyle: .Alert);
+            let okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
             alertController.addAction(okAction);
             self.presentViewController(alertController, animated: true, completion: nil)
         }else{
-            vcodePdu!.setStringParameter(name:"username",value:regUserName.text!);
-            vcodePdu!.setStringParameter(name:"action",value:"register");
-            vcodePdu!..requestHttp();
+            vcodePdu!.setStringParameter("username",value:regUserName.text!);
+            vcodePdu!.setStringParameter("action",value:"register");
+            vcodePdu!.requestHttp();
         }
     }
     @IBAction func regBtnClick(sender: AnyObject) {
-        var okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
-        if regUserName.text == nill || regUserName.text == "" {
-            var alertController = UIAlertController(title: "提示", message: "请输入用户名", preferredStyle: .Alert);
+        let okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
+        if regUserName.text == nil || regUserName.text == "" {
+            let alertController = UIAlertController(title: "提示", message: "请输入用户名", preferredStyle: .Alert);
             alertController.addAction(okAction);
             self.presentViewController(alertController, animated: true, completion: nil)
                 return;
         }
-        if regVerify.text == nill || regVerify.text == "" {
-            var alertController = UIAlertController(title: "提示", message: "请输验证码", preferredStyle: .Alert);
+        if regVerify.text == nil || regVerify.text == "" {
+            let alertController = UIAlertController(title: "提示", message: "请输验证码", preferredStyle: .Alert);
             alertController.addAction(okAction);
             self.presentViewController(alertController, animated: true, completion: nil)
                 return;
         }
-        if regPassword.text == nill || regPassword.text == "" {
-            var alertController = UIAlertController(title: "提示", message: "请输密码", preferredStyle: .Alert);
+        if regPassword.text == nil || regPassword.text == "" {
+            let alertController = UIAlertController(title: "提示", message: "请输密码", preferredStyle: .Alert);
             alertController.addAction(okAction);
             self.presentViewController(alertController, animated: true, completion: nil)
                 return;
         }
-        loginPdu!.setStringParameter(name:"username",value:regUserName.text!);
-        loginPdu!.setStringParameter(name:"password",value:regVerify.text);
-        loginPdu!.setStringParameter(name:"vcode",value:regPassword.text);
-        loginPdu!..requestHttp();
+        loginPdu!.setStringParameter("username",value:regUserName.text!);
+        loginPdu!.setStringParameter("password",value:regVerify.text!);
+        loginPdu!.setStringParameter("vcode",value:regPassword.text!);
+        loginPdu!.requestHttp();
 
     }
     @IBAction func modifyPassBtnClick(sender: AnyObject) {
@@ -154,21 +154,21 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
         print("viewController reload data!!!");
     }
     func returnSuccess(actionId: String) {
-		switch segBtn.selectedSegmentIndex {
+		switch actionId {
         case "vcode":
             if userAction == 0 {
-                regVcodeBtn.enable = false;
+                regVcodeBtn.enabled = false;
             }else{
-                changeVcodeBtn.enable = false;
+                changeVcodeBtn.enabled = false;
             }
             tickDown = 60;
             timer = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDown"),userInfo:nil,repeats:true);
 
             break;
         case "modifypass":
-            var alertController = UIAlertController(title: "提示", message: "注册成功，返回个人信息", preferredStyle: .Alert);
-            var cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil);
-            var okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
+            let alertController = UIAlertController(title: "提示", message: "注册成功，返回个人信息", preferredStyle: .Alert);
+            let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil);
+            let okAction = UIAlertAction(title: "好的", style: .Default, handler: nil);
             alertController.addAction(cancelAction);
             alertController.addAction(okAction);
             self.presentViewController(alertController, animated: true, completion: nil)
@@ -184,18 +184,18 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
     func requestFailed(err: ErrInfo) {
         
     }
-    func tickDown(){
+    func tickDownAction(){
         if userAction == 0{
-            regVcodeBtn.text = "请\(tickDown)秒后重试";
+            regVcodeBtn.titleLabel?.text = "请\(tickDown)秒后重试";
             if tickDown == 0 {
-                timer.invalidate();
-                regVcodeBtn.enable = true;
+                timer!.invalidate();
+                regVcodeBtn.enabled = true;
             }
         }else{
-            changeVcodeBtn.text = "请\(tickDown)秒后重试";
+            changeVcodeBtn.titleLabel?.text = "请\(tickDown)秒后重试";
             if tickDown == 0 {
-                timer.invalidate();
-                changeVcodeBtn.enable = true;
+                timer!.invalidate();
+                changeVcodeBtn.enabled = true;
             }
         }
     }

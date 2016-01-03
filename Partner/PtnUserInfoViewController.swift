@@ -140,6 +140,7 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     }
 
     @IBAction func registBtnClick(sender: AnyObject) {
+        
     }
     @IBAction func loginBtnClick(sender: AnyObject) {
         let alert = UIAlertView(title:"登录",message:"请输入用户名和密码",delegate:self,cancelButtonTitle:"登录",otherButtonTitles:"忘记密码");
