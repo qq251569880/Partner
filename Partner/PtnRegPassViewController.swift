@@ -193,7 +193,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
             }
         }else{
             changeVcodeBtn.titleLabel?.text = "请\(tickDown)秒后重试";
-            if tickDown == .ForgotPass {
+            if tickDown == 0 {
                 timer!.invalidate();
                 changeVcodeBtn.enabled = true;
             }

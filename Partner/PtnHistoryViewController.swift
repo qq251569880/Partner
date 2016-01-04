@@ -66,11 +66,11 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     @IBAction func segmentClick(sender: AnyObject) {
 		switch sender.selectedSegmentIndex {
 			case 0:
-				activePdu!.setUrl("http://yuyanshu.cn:8001/app.php/active/query");
+				activePdu!.setUrl("\(serverUrl)active/query");
 				activePdu!.setStringParameter("creatorid",value:"userid");
 				break;
 			case 1:
-				activePdu!.setUrl("http://yuyanshu.cn:8001/app.php/parti/query");
+				activePdu!.setUrl("\(serverUrl)parti/query");
 		        activePdu!.setStringParameter("userid",value:"userid");
 				break;
             default:

@@ -11,6 +11,11 @@
 		9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */; };
 		98A0A9691C3416140041C0FC /* PtnLoginPDU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */; };
 		98A0A9731C3416200041C0FC /* PtnRegPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9721C3416200041C0FC /* PtnRegPassViewController.swift */; };
+		98A0A97A1C3AA17D0041C0FC /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9771C3AA17D0041C0FC /* SQLiteDB.swift */; };
+		98A0A97B1C3AA17D0041C0FC /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9781C3AA17D0041C0FC /* SQLTable.swift */; };
+		98A0A97C1C3AA17D0041C0FC /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9791C3AA17D0041C0FC /* String-Extras.swift */; };
+		98A0A9861C3AA2E40041C0FC /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A0A9851C3AA2E40041C0FC /* libsqlite3.0.tbd */; };
+		98A0A9891C3AB0020041C0FC /* PtnSqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0A9881C3AB0020041C0FC /* PtnSqlite.swift */; };
 		98A3FD691C140CFC00438A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A3FD681C140CFC00438A7A /* AppDelegate.swift */; };
 		98A3FD6E1C140CFC00438A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6C1C140CFC00438A7A /* Main.storyboard */; };
 		98A3FD701C140CFC00438A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A3FD6F1C140CFC00438A7A /* Assets.xcassets */; };
@@ -131,6 +136,11 @@
 		987985671C24521D00BAF98E /* PtnActiveInfoPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnActiveInfoPDU.swift; sourceTree = "<group>"; };
 		98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnLoginPDU.swift; sourceTree = "<group>"; };
 		98A0A9721C3416200041C0FC /* PtnRegPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnRegPassViewController.swift; sourceTree = "<group>"; };
+		98A0A9771C3AA17D0041C0FC /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
+		98A0A9781C3AA17D0041C0FC /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLTable.swift; sourceTree = "<group>"; };
+		98A0A9791C3AA17D0041C0FC /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Extras.swift"; sourceTree = "<group>"; };
+		98A0A9851C3AA2E40041C0FC /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		98A0A9881C3AB0020041C0FC /* PtnSqlite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PtnSqlite.swift; sourceTree = "<group>"; };
 		98A3FD651C140CFC00438A7A /* Partner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Partner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A3FD681C140CFC00438A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A3FD6D1C140CFC00438A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A0A9861C3AA2E40041C0FC /* libsqlite3.0.tbd in Frameworks */,
 				98A3FE231C179CC400438A7A /* SwiftHTTP.framework in Frameworks */,
 				98A3FE221C179CBF00438A7A /* JSONJoy.framework in Frameworks */,
 			);
@@ -208,9 +219,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98A0A9761C3AA17D0041C0FC /* SQLiteDB */ = {
+			isa = PBXGroup;
+			children = (
+				98A0A9771C3AA17D0041C0FC /* SQLiteDB.swift */,
+				98A0A9781C3AA17D0041C0FC /* SQLTable.swift */,
+				98A0A9791C3AA17D0041C0FC /* String-Extras.swift */,
+			);
+			path = SQLiteDB;
+			sourceTree = "<group>";
+		};
 		98A3FD5C1C140CFB00438A7A = {
 			isa = PBXGroup;
 			children = (
+				98A0A9851C3AA2E40041C0FC /* libsqlite3.0.tbd */,
 				98A3FD671C140CFC00438A7A /* Partner */,
 				98A3FD7C1C140CFC00438A7A /* PartnerTests */,
 				98A3FD871C140CFC00438A7A /* PartnerUITests */,
@@ -231,6 +253,7 @@
 		98A3FD671C140CFC00438A7A /* Partner */ = {
 			isa = PBXGroup;
 			children = (
+				98A0A9761C3AA17D0041C0FC /* SQLiteDB */,
 				98A3FE241C1857F900438A7A /* Public */,
 				98A3FDD41C179C9900438A7A /* JSONJoy */,
 				98A3FDE21C179C9A00438A7A /* SwiftHTTP */,
@@ -346,6 +369,7 @@
 		98A3FE241C1857F900438A7A /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				98A0A9881C3AB0020041C0FC /* PtnSqlite.swift */,
 				98A0A9681C3416140041C0FC /* PtnLoginPDU.swift */,
 				98C73FD11C2D820C00C492A0 /* PtnUserDefault.swift */,
 				98C73FD21C2D820C00C492A0 /* PtnUserInfoPDU.swift */,
@@ -580,11 +604,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				98015A321C2C178C00355B0C /* PtnActiveHistoryPDU .swift in Sources */,
+				98A0A97B1C3AA17D0041C0FC /* SQLTable.swift in Sources */,
+				98A0A9891C3AB0020041C0FC /* PtnSqlite.swift in Sources */,
 				9879856A1C24521D00BAF98E /* PtnActiveInfoPDU.swift in Sources */,
 				98A3FE2B1C1857F900438A7A /* PtnEntity.swift in Sources */,
 				98C73FD31C2D820C00C492A0 /* PtnUserDefault.swift in Sources */,
 				98A3FE091C179C9A00438A7A /* Upload.swift in Sources */,
 				98A3FDD21C15C4D700438A7A /* PtnSportListTableViewCell.swift in Sources */,
+				98A0A97C1C3AA17D0041C0FC /* String-Extras.swift in Sources */,
 				98A3FDFF1C179C9A00438A7A /* HTTPSecurity.swift in Sources */,
 				98A0A9731C3416200041C0FC /* PtnRegPassViewController.swift in Sources */,
 				98A70D921C24FDB0004C4819 /* PtnCreateResultPDU.swift in Sources */,
@@ -600,6 +627,7 @@
 				98A0A9691C3416140041C0FC /* PtnLoginPDU.swift in Sources */,
 				98A3FE051C179C9A00438A7A /* StatusCode.swift in Sources */,
 				98A3FDFA1C179C9A00438A7A /* README.md in Sources */,
+				98A0A97A1C3AA17D0041C0FC /* SQLiteDB.swift in Sources */,
 				98A3FE031C179C9A00438A7A /* README.md in Sources */,
 				98A3FE021C179C9A00438A7A /* Operation.swift in Sources */,
 				98C73FD41C2D820C00C492A0 /* PtnUserInfoPDU.swift in Sources */,
@@ -748,6 +776,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GreatJone.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -759,6 +788,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = GreatJone.Partner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};

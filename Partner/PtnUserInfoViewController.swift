@@ -24,6 +24,7 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        PtnSqlite.createChatTable();
         menuList.delegate = self;
         menuList.dataSource = self;
 		let accessToken = getLocalUserString("accesstoken");
@@ -95,7 +96,7 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
                 self.performSegueWithIdentifier("contactus",sender:self);
                 break;
             case 4:
-                self.logout()；
+                self.logout();
                 break;
             default:
                 break;
@@ -106,14 +107,14 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
         if (segue.identifier == "fillinfo") {
             //var detailController:LGSportDetailController  = segue.destinationViewController as LGSportDetailController;
             //detailController.sportId = sportId;
-            println("Chat classify is \(segue.identifier)")
+            print("Chat classify is \(segue.identifier)")
         }else if(segue.identifier == "contactus"){
 
         }else if(segue.identifier == "regpass"){
-            let regPass = segue.destinationViewController as PtnRegPassViewController;
+            let regPass = segue.destinationViewController as! PtnRegPassViewController;
             regPass.userAction = regPassActionId;
         }else{
-            println(segue.identifier)
+            print(segue.identifier)
         }
     }
 
@@ -216,13 +217,13 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     func logout(){
         clearUserString("accesstoken");
         let app = UIApplication.sharedApplication().delegate;
-        let window = app.window;
-        UIView.animateWithDuration(1.0f,animations:{
-            window.alpha = 0;
-            window.frame = CGRectMake(0,window.bounds.size.width,0,0);
+        let window = app!.window
+        UIView.animateWithDuration(1.0,animations:{
+            window!!.alpha = 0;
+            window!!.frame = CGRectMake(0,window!!.bounds.size.width,0,0);
         },completion:{ finish in
             exit(0);
-        }
+        })
     }
 }
 

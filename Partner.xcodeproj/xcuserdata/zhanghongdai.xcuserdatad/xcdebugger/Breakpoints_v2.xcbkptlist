@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "473178540.374797"
+            timestampString = "473609055.826135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "473178540.374797"
+            timestampString = "473609055.826135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,12 +506,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "473178540.374797"
+            timestampString = "473609055.826135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "loginBtnClick(_:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "reloadTable()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -522,12 +522,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Partner/PtnUserInfoViewController.swift"
-            timestampString = "473178540.374797"
+            timestampString = "473609055.826135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "alertView(_:clickedButtonAtIndex:)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "displayUserInfo()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -637,6 +637,22 @@
             startingLineNumber = "116"
             endingLineNumber = "116"
             landmarkName = "regSendVerify(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Partner/PtnUserInfoViewController.swift"
+            timestampString = "473609055.826135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "logout()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
