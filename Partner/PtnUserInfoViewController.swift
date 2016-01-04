@@ -20,6 +20,7 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     @IBOutlet weak var loginBtn: UIButton!
     var userPdu:PtnUserInfoPDU?
     var loginPdu:PtnLoginPDU?
+    var regPassActionId:RegPassAction = .Register;
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -54,10 +55,10 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
                 menuCell?.textLabel!.text = "完善资料";
                 break;
             case 1:
-                menuCell?.textLabel!.text = "场地收藏";
+                menuCell?.textLabel!.text = "修改密码";
                 break;
             case 2:
-                menuCell?.textLabel!.text = "朋友分享";
+                menuCell?.textLabel!.text = "活动地点";
                 break;
             case 3:
                 menuCell?.textLabel!.text = "联系我们";
@@ -75,10 +76,45 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
         
         return 5;
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         //start a Chat
+        let rowNo = indexPath.row;
+        switch rowNo {
+            case 0:
+                self.performSegueWithIdentifier("fillinfo",sender:self);
+                break;
+            case 1:
+                regPassActionId = .ChangePassword;
+                self.performSegueWithIdentifier("regpass",sender:self);
+                break;
+            case 2:
+                self.performSegueWithIdentifier("activeplace",sender:self);
+                break;
+            case 3:
+                self.performSegueWithIdentifier("contactus",sender:self);
+                break;
+            case 4:
+                self.logout()；
+                break;
+            default:
+                break;
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject? ){
         
+        if (segue.identifier == "fillinfo") {
+            //var detailController:LGSportDetailController  = segue.destinationViewController as LGSportDetailController;
+            //detailController.sportId = sportId;
+            println("Chat classify is \(segue.identifier)")
+        }else if(segue.identifier == "contactus"){
+
+        }else if(segue.identifier == "regpass"){
+            let regPass = segue.destinationViewController as PtnRegPassViewController;
+            regPass.userAction = regPassActionId;
+        }else{
+            println(segue.identifier)
+        }
     }
 
     func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath) -> CGFloat{
@@ -140,7 +176,8 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
     }
 
     @IBAction func registBtnClick(sender: AnyObject) {
-        
+        regPassActionId = .Register;
+        self.performSegueWithIdentifier("regpass",sender:self);
     }
     @IBAction func loginBtnClick(sender: AnyObject) {
         let alert = UIAlertView(title:"登录",message:"请输入用户名和密码",delegate:self,cancelButtonTitle:"登录",otherButtonTitles:"忘记密码");
@@ -159,8 +196,11 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
             loginPdu!.requestHttp();
         }else{
             //进入忘记密码页面
+            regPassActionId = .ForgotPassword;
+            self.performSegueWithIdentifier("regpass",sender:self);
         }
     }
+    
     func willPresentAlertView(alertView:UIAlertView){
         for view in alertView.subviews{
             if view.isKindOfClass(UILabel) {
@@ -172,6 +212,17 @@ class PtnUserInfoViewController: UIViewController,UITableViewDataSource,UITableV
 
     func requestFailed(err: ErrInfo) {
         
+    }
+    func logout(){
+        clearUserString("accesstoken");
+        let app = UIApplication.sharedApplication().delegate;
+        let window = app.window;
+        UIView.animateWithDuration(1.0f,animations:{
+            window.alpha = 0;
+            window.frame = CGRectMake(0,window.bounds.size.width,0,0);
+        },completion:{ finish in
+            exit(0);
+        }
     }
 }
 

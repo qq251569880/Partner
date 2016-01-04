@@ -209,6 +209,7 @@ struct ChatMessage
 		sendTime = decoder["sendtime"].string
 		id = decoder["nindex"].integer
     }
+    
 }
 struct Comment
 {

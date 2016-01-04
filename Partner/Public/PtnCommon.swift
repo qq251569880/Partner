@@ -16,6 +16,12 @@ struct ErrInfo{
         errInfo = info;
     }
 }
+enum RegPassAction{
+    case Register
+    case ChangePassword
+    case ForgotPassword
+}
+
 let ERR_JSON_DECODE:Int = 1001;
 let ERR_REQUEST_RESPONSE:Int = 1002;
 let ERR_REQUEST_EXCEPTION:Int = 1003;
@@ -23,3 +29,4 @@ let ERR_REQUEST_EXCEPTION:Int = 1003;
 
 let jsonFailed:ErrInfo = ErrInfo(code:ERR_JSON_DECODE,info:"decode json string failed");
 let requestFailed:ErrInfo = ErrInfo(code:ERR_REQUEST_RESPONSE,info:"Http requestFailed");
+

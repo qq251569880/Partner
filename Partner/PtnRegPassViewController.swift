@@ -17,7 +17,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
     var changePassPdu:PtnNoBodyPDU?
     var forgetPassPdu:PtnNoBodyPDU?
     var vcodePdu:PtnNoBodyPDU?
-    var userAction:Int = 0;
+    var userAction:RegPassAction = .Register;
     var tickDown:Int = 60;
     var timer:NSTimer?;
 
@@ -53,17 +53,17 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
         changePassPdu = PtnNoBodyPDU(url: "\(serverUrl)user/forgotpass",actionid:"forgotpass");
         loginPdu = PtnLoginPDU(url: "\(serverUrl)user/reg");
         switch userAction {
-        case 0:
+        case .Register:
             changePassView.hidden = true;
             resetPassView.hidden = true;
             regView.hidden = false;
             break;
-        case 1:
+        case .ChangePassword:
             resetPassView.hidden = true;
             regView.hidden = true;
             changePassView.hidden = false;
             break;
-        case 2:
+        case .ForgotPassword:
             changePassView.hidden = true;
             regView.hidden = true;
             resetPassView.hidden = false;
@@ -156,7 +156,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
     func returnSuccess(actionId: String) {
 		switch actionId {
         case "vcode":
-            if userAction == 0 {
+            if userAction == .Register {
                 regVcodeBtn.enabled = false;
             }else{
                 changeVcodeBtn.enabled = false;
@@ -185,7 +185,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
         
     }
     func tickDownAction(){
-        if userAction == 0{
+        if userAction == .Register{
             regVcodeBtn.titleLabel?.text = "请\(tickDown)秒后重试";
             if tickDown == 0 {
                 timer!.invalidate();
@@ -193,7 +193,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
             }
         }else{
             changeVcodeBtn.titleLabel?.text = "请\(tickDown)秒后重试";
-            if tickDown == 0 {
+            if tickDown == .ForgotPass {
                 timer!.invalidate();
                 changeVcodeBtn.enabled = true;
             }
