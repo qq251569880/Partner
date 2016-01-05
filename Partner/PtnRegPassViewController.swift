@@ -162,7 +162,7 @@ class PtnRegPassViewController: UIViewController,PduDelegate {
                 changeVcodeBtn.enabled = false;
             }
             tickDown = 60;
-            timer = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDown"),userInfo:nil,repeats:true);
+            timer = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDownAction"),userInfo:nil,repeats:true);
 
             break;
         case "modifypass":

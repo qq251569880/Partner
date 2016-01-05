@@ -209,7 +209,7 @@ struct ChatMessage
 		sendTime = decoder["sendtime"].string
 		id = decoder["nindex"].integer
     }
-    
+    var fileData:NSData?;
 }
 struct Comment
 {

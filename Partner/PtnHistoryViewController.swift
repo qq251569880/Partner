@@ -12,6 +12,7 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
 
     @IBOutlet weak var activeList: UITableView!
     var activePdu:PtnActiveHistoryPDU?
+    var timer:NSTimer?;
     override func viewWillAppear(animated: Bool) {
     }
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
         let sportCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellId,forIndexPath:indexPath);
         let label:UILabel = sportCell!.viewWithTag(1) as! UILabel;
         label.text = activePdu!.historyInfo![indexPath.row].title;
+        let msg:UILabel = sportCell!.viewWithTag(2) as! UILabel;
+        msg.text = PtnSqlite.getLastChat(activePdu!.historyInfo![indexPath.row].activeId);
         return sportCell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -61,17 +64,19 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     //PduDelegate协议
     func reloadTable(){
 		print("viewController reload data!!!");
+        timer = NSTimer.scheduledTimerWithTimeInterval(5,target:self,selector:Selector("updateChatMessage"),userInfo:nil,repeats:true);
 		activeList.reloadData();
 	}
     @IBAction func segmentClick(sender: AnyObject) {
 		switch sender.selectedSegmentIndex {
 			case 0:
 				activePdu!.setUrl("\(serverUrl)active/query");
-				activePdu!.setStringParameter("creatorid",value:"userid");
+				activePdu!.setStringParameter("creatorid",value:getLocalUserString("userid"));
+				activePdu!.setStringParameter("sort",value:"nindex desc");
 				break;
 			case 1:
 				activePdu!.setUrl("\(serverUrl)parti/query");
-		        activePdu!.setStringParameter("userid",value:"userid");
+		        activePdu!.setStringParameter("sort",value:"nindex desc");
 				break;
             default:
                 break
@@ -83,6 +88,8 @@ class PtnHistoryViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     func requestFailed(err: ErrInfo) {
         
+    }
+    func updateChatMessage(){
     }
 }
 
